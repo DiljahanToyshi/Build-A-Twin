@@ -7,6 +7,7 @@ import Login from './Components/Shared/Login';
 import AllToys from './Components/AllToys';
 import MyToys from './Components/MyToys';
 import Register from './Components/Shared/Register';
+import AuthProvider from './providers/Authprovider';
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,8 @@ const router = createBrowserRouter([
     ],
   },
 ]);
-ReactDOM.createRoot(document.getElementById('root')).render(
- <RouterProvider router={router}></RouterProvider>,
-)
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <AuthProvider>
+    <RouterProvider router={router}></RouterProvider>
+  </AuthProvider>
+);
