@@ -4,6 +4,7 @@ import {
   Bars3BottomRightIcon,
   XMarkIcon,
 } from "@heroicons/react/24/solid";
+import logo from './../../assets/images.png'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,6 +13,8 @@ const Header = () => {
       <div className="relative flex items-center justify-between">
         {/* Logo Section */}
         <Link to="/" className="inline-flex items-center">
+          <img className="h-10 " src={logo} alt="" />
+
           <span className="ml-2 text-xl font-bold tracking-wide text-gray-800">
             Build A Twin
           </span>
@@ -22,7 +25,7 @@ const Header = () => {
           <li>
             <NavLink
               to="/"
-              className={({ isActive }) => (isActive ? "active" : "default")}
+              className={({ isActive }) => (isActive ? 'text-blue-700 text-xl font-semibold' : "default")}
             >
               Home
             </NavLink>
@@ -30,15 +33,15 @@ const Header = () => {
           <li>
             <NavLink
               to="/login"
-              className={({ isActive }) => (isActive ? "active" : "default")}
+              className={({ isActive }) => (isActive ? 'text-blue-700 text-xl font-semibold' : "default")}
             >
-             Login
+              Login
             </NavLink>
           </li>
           <li>
             <NavLink
               to="/register"
-              className={({ isActive }) => (isActive ? "active" : "default")}
+              className={({ isActive }) => (isActive ? 'text-blue-700 text-xl font-semibold' : "default")}
             >
               Register
             </NavLink>
@@ -46,15 +49,15 @@ const Header = () => {
           <li>
             <NavLink
               to="/myToys"
-              className={({ isActive }) => (isActive ? "active" : "default")}
+              className={({ isActive }) => (isActive ? 'text-blue-700 text-xl font-semibold' : "default")}
             >
-             My Toys
+              My Toys
             </NavLink>
           </li>
           <li>
             <NavLink
               to="/allToys"
-              className={({ isActive }) => (isActive ? "active" : "default")}
+              className={({ isActive }) => (isActive ? 'text-blue-700 text-xl font-semibold' : "default")}
             >
               All Toys
             </NavLink>
@@ -77,6 +80,8 @@ const Header = () => {
                 <div className="flex items-center justify-between mb-4">
                   <div>
                     <Link to="/" className="inline-flex items-center">
+                              <img className="h-10 " src={logo} alt="" />
+
                       <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
                         Build A Twin
                       </span>
@@ -106,7 +111,7 @@ const Header = () => {
                         to="/register"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400"
                       >
-                       Register
+                        Register
                       </Link>
                     </li>
                     <li>
@@ -122,7 +127,7 @@ const Header = () => {
                         to="/myToys"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400"
                       >
-                       My Toys
+                        My Toys
                       </Link>
                     </li>
                     <li>
