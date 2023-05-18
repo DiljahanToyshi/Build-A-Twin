@@ -10,13 +10,13 @@ const [error,setError] = useState('');
   const handleRegister = (event) => {
     event.preventDefault();
     const form = event.target;
-    const name = form.name.value;
+    const displayName = form.displayName.value;
     const photo = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
     const confirm = form.confirm.value;
 
-    console.log(name, photo, email, password,confirm);
+    console.log(displayName, photo, email, password, confirm);
     if (password !== confirm) {
       setError("your password did not match");
       return;
@@ -25,6 +25,7 @@ const [error,setError] = useState('');
       .then((result) => {
         const createdUser = result.user;
         console.log(createdUser);
+        form.reset();
       })
       .catch((error) => {
         console.log(error);
@@ -42,7 +43,12 @@ const [error,setError] = useState('');
       <Form onSubmit={handleRegister} className="pr-56 pl-12 space-y-6">
         <div className="form-control">
           <label htmlFor="name">Name</label>
-          <input type="text" name="name" placeholder="Your Name" required />
+          <input
+            type="text"
+            name="displayName"
+            placeholder="Your Name"
+            required
+          />
         </div>
         <div className="form-control">
           <label htmlFor="photo">Photo URL</label>
@@ -70,8 +76,10 @@ const [error,setError] = useState('');
             required
           />
         </div>
-        <p className="text-red-500"><small>{error}</small></p>
-       
+        <p className="text-red-500">
+          <small>{error}</small>
+        </p>
+
         <button
           className="btn btn-active border-0 text-white font-semibold bg-indigo-500"
           type="submit"

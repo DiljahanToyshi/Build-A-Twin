@@ -8,7 +8,12 @@ import logo from './../../assets/images.png'
 import { AuthContext } from "../../providers/Authprovider";
 
 const Header = () => {
-  const {user} = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
+    const hanldeLogOut = () => {
+      logOut()
+        .then(() => {})
+        .catch((error) => console.log(error));
+    };
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <div className="bg-indigo-300 px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
@@ -27,23 +32,49 @@ const Header = () => {
           <li>
             <NavLink
               to="/"
-              className={({ isActive }) => (isActive ? 'text-blue-700 text-xl font-semibold' : "default")}
+              className={({ isActive }) =>
+                isActive ? "text-blue-700 text-xl font-semibold" : "default"
+              }
             >
               Home
             </NavLink>
           </li>
-          <li>
-            <NavLink
-              to="/login"
-              className={({ isActive }) => (isActive ? 'text-blue-700 text-xl font-semibold' : "default")}
-            >
-              Login
-            </NavLink>
-          </li>
+          {user ? (
+            <li>
+              {user && (
+                <div>
+                  <img
+                    className="h-14 rounded-full"
+                    src={user?.photoURL}
+                    alt=""
+                    title={user.displayName}
+                  />{" "}
+                  <button className="pl-4" onClick={hanldeLogOut}>
+                    Log Out
+                  </button>
+                </div>
+              )}
+            </li>
+          ) : (
+            <li>
+              <NavLink
+                to="/login"
+                aria-label="Home"
+                title="login"
+                className={({ isActive }) =>
+                  isActive ? "text-blue-700 text-xl font-semibold" : "default"
+                }
+              >
+                Login
+              </NavLink>
+            </li>
+          )}
           <li>
             <NavLink
               to="/register"
-              className={({ isActive }) => (isActive ? 'text-blue-700 text-xl font-semibold' : "default")}
+              className={({ isActive }) =>
+                isActive ? "text-blue-700 text-xl font-semibold" : "default"
+              }
             >
               Register
             </NavLink>
@@ -51,7 +82,9 @@ const Header = () => {
           <li>
             <NavLink
               to="/myToys"
-              className={({ isActive }) => (isActive ? 'text-blue-700 text-xl font-semibold' : "default")}
+              className={({ isActive }) =>
+                isActive ? "text-blue-700 text-xl font-semibold" : "default"
+              }
             >
               My Toys
             </NavLink>
@@ -59,7 +92,9 @@ const Header = () => {
           <li>
             <NavLink
               to="/allToys"
-              className={({ isActive }) => (isActive ? 'text-blue-700 text-xl font-semibold' : "default")}
+              className={({ isActive }) =>
+                isActive ? "text-blue-700 text-xl font-semibold" : "default"
+              }
             >
               All Toys
             </NavLink>
@@ -82,7 +117,7 @@ const Header = () => {
                 <div className="flex items-center justify-between mb-4">
                   <div>
                     <Link to="/" className="inline-flex items-center">
-                              <img className="h-10 " src={logo} alt="" />
+                      <img className="h-10 " src={logo} alt="" />
 
                       <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
                         Build A Twin

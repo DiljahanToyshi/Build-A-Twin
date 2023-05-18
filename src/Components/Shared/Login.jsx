@@ -4,11 +4,11 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/Authprovider";
 
 const Login = () => {
-  const { signIn } = useContext(AuthContext);
-  const navigate = useNavigate();
-  const location = useLocation();
-  console.log("login page location", location);
-  const from = location.state?.from?.pathname || "/";
+  const { signIn, signInWithGoogle } = useContext(AuthContext);
+//   const navigate = useNavigate();
+//   const location = useLocation();
+//   console.log("login page location", location);
+//   const from = location.state?.from?.pathname || "/";
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -21,7 +21,18 @@ const Login = () => {
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
-        navigate(from, { replace: true });
+        // navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const handleGoogleSignIn = () => {
+    signInWithGoogle()
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
       })
       .catch((error) => {
         console.log(error);
@@ -30,16 +41,15 @@ const Login = () => {
 
   return (
     <Container className="md:mt-20 ml-3 md:ml-96 md:px-48 w-25 ">
-      <h3>Please Login</h3>
-      <Form onSubmit={handleLogin} className="pr-56 pl-12 space-y-6">
+      <h3 className="text-5xl font-semibold mb-4 text-indigo-700">
+        Please Login
+      </h3>
+      <Form onSubmit={handleLogin} className="md:pr-52 md:mr-12  space-y-6 m-5">
         <div className="form-control">
           <label htmlFor="name">Name</label>
           <input type="text" name="name" placeholder="Your Name" required />
         </div>
-        <div className="form-control">
-          <label htmlFor="photo">Photo URL</label>
-          <input type="text" name="photo" placeholder="Photo URL" required />
-        </div>
+
         <div className="form-control">
           <label htmlFor="email">Email address</label>
           <input type="email" name="email" placeholder="Enter email" required />
@@ -55,13 +65,21 @@ const Login = () => {
           />
         </div>
 
-        <button
-          className="btn btn-active border-0 text-white font-semibold bg-indigo-500"
-          type="submit"
-        >
-          login
-        </button>
-
+        <div className="md:flex gap-4">
+          {" "}
+          <button
+            className="btn btn-active border-0 text-white font-semibold bg-indigo-500"
+            type="submit"
+          >
+            login
+          </button>
+          <button
+            className="btn btn-active border-0 text-white font-semibold bg-indigo-500"
+            onClick={handleGoogleSignIn}
+          >
+            Login with Google
+          </button>
+        </div>
         <br />
         <Form.Text className="text-indigo-800">
           New to Build A Twin? <Link to="/register">Register</Link>
