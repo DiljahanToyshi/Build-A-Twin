@@ -1,42 +1,33 @@
 import { useEffect, useState } from "react";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import "react-tabs/style/react-tabs.css";
 import Toys from "./Toys";
+import { useNavigation } from "react-router-dom";
+import LoadingSpinner from "./LoadingSpinner";
 
 const AllToys = () => {
-  const [toys,setToys] = useState([]);
-  useEffect(() =>{
-    fetch('toys.json')
-    .then(res => res.json())
-    .then(data =>setToys(data))
-  },[])
-    return (
-      <div className="grid fap-8 lg:grid-cols-3">
-       
-    
-        {/* <Tabs>
-          <TabList>
-            <Tab>Title 1</Tab>
-            <Tab>Title 2</Tab>
-            <Tab>Title 3</Tab>
-          </TabList>
+  const [toys, setToys] = useState([]);
 
-          <TabPanel>
-            <h2>Any content 1</h2>
-          </TabPanel>
-          <TabPanel>
-            <h2>Any content 2</h2>
-          </TabPanel>
-          <TabPanel>
-            <h2>Any content 3</h2>
-          </TabPanel>
-        </Tabs> */}
+  const navigation = useNavigation();
+  if (navigation.state === "loading") {
+    return <LoadingSpinner />
+  }
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  useEffect(() => {
+    fetch("http://localhost:5000/toys")
+      .then((res) => res.json())
+      .then((data) => setToys(data));
+  }, []);
+  
+  return (
+    <div className="grid fap-8 lg:grid-cols-3">
+     
       {
         // eslint-disable-next-line react/jsx-key
-        toys.map(toy =>(<Toys key={toy._id} toy={toy}></Toys>))
+        toys.map((toy) => (
+          <Toys key={toy._id} toy={toy}></Toys>
+        ))
       }
-      </div>
-    );
+    </div>
+  );
 };
 
 export default AllToys;

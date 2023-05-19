@@ -1,7 +1,13 @@
+import { Link, useNavigation } from "react-router-dom";
+import LoadingSpinner from "./LoadingSpinner";
 
 // eslint-disable-next-line react/prop-types
 const Toys = ({ toy }) => {
-  const {
+     const navigation = useNavigation();
+     if (navigation.state === "loading") {
+       return <LoadingSpinner />;
+     }
+  const {_id,
     availableQuantity,
     description,
     price,
@@ -10,7 +16,7 @@ const Toys = ({ toy }) => {
     // eslint-disable-next-line react/prop-types
     subCategory,toyName
   } = toy;
-console.log(toy)
+
   return (
     <>
       <div className="bg-gray-100 p-6 rounded shadow-lg">
@@ -23,12 +29,16 @@ console.log(toy)
           {toyName}
         </p>
         <p className="text-gray-700 ">Category: {subCategory}</p>
+        <p className="text-gray-700 ">Rating : {rating}</p>
         <p className="text-gray-700 font-bold">Price: {price}$</p>
 
-        <button className="btn  btn-secondary block border-0 font-semibold bg-indigo-500">
+        <Link to={`/toys/${_id}`}>
           {" "}
-          order now{" "}
-        </button>
+          <button className="btn  btn-secondary block border-0 font-semibold bg-indigo-500">
+            {" "}
+            view details
+          </button>
+        </Link>
       </div>
     </>
   );

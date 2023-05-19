@@ -10,12 +10,13 @@ import Register from './Components/Shared/Register';
 import AuthProvider from './providers/Authprovider';
 import PrivateRoute from './privateRoute/PrivateRoute';
 import ErrorPage from './Components/ErrorPage';
+import SingleToyDetails from './Components/SingleToyDetails';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
-    errorElement:<ErrorPage></ErrorPage>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -33,6 +34,17 @@ const router = createBrowserRouter([
         path: "allToys",
         element: <AllToys></AllToys>,
       },
+      {
+        path: "/toys/:id",
+        element: (
+          <PrivateRoute>
+            <SingleToyDetails></SingleToyDetails>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/toys/${params.id}`),
+      },
+
       {
         path: "myToys",
         element: (
