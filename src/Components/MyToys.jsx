@@ -72,10 +72,11 @@ const MyToys = () => {
                   </label>
                 </th>
                 <th>Image</th>
-                <th>Service</th>
-                <th>Date</th>
+                <th>Category</th>
+                <th>Toy Name</th>
+
                 <th>Price</th>
-                <th>Status</th>
+                <th>Quantity</th>
               </tr>
             </thead>
             <tbody>

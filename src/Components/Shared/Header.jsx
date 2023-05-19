@@ -41,7 +41,7 @@ const Header = () => {
               Home
             </NavLink>
           </li>
-          {user ?.email? (
+          {user?.email ? (
             <li>
               {user && (
                 <div className="flex">
@@ -93,12 +93,22 @@ const Header = () => {
           </li>
           <li>
             <NavLink
+              to="/blogs"
+              className={({ isActive }) =>
+                isActive ? "text-blue-700 text-xl font-semibold" : "default"
+              }
+            >
+              Blogs
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
               to="/allToys"
               className={({ isActive }) =>
                 isActive ? "text-blue-700 text-xl font-semibold" : "default"
               }
             >
-            All Toys
+              All Toys
             </NavLink>
           </li>
           <li>
@@ -111,7 +121,6 @@ const Header = () => {
               Add Toys
             </NavLink>
           </li>
-          
         </ul>
         {/* Mobile Navbar Section */}
         <div className="lg:hidden">
@@ -163,6 +172,18 @@ const Header = () => {
                       >
                         Register
                       </Link>
+                    </li>
+                    <li>
+                      <NavLink
+                        to="/blogs"
+                        className={({ isActive }) =>
+                          isActive
+                            ? "text-blue-700 text-xl font-semibold"
+                            : "default"
+                        }
+                      >
+                        Blogs
+                      </NavLink>
                     </li>
                     <li>
                       <Link

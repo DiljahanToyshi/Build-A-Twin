@@ -3,7 +3,7 @@ const ToyRow = ({ toy, handleDelete, handleAddingConfirm }) => {
    _id,
    price,
    picture,
-  
+  availableQuantity,
    // eslint-disable-next-line react/prop-types
    subCategory,
    toyName,
@@ -43,6 +43,7 @@ const ToyRow = ({ toy, handleDelete, handleAddingConfirm }) => {
       <td>{subCategory}</td>
       <td>{toyName}</td>
       <td>${price}</td>
+      <td>{availableQuantity}</td>
       <th>
         {status === "confirm" ? (
           <span className="font-bold text-primary">Confirmed</span>
