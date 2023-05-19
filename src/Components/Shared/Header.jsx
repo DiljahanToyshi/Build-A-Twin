@@ -42,7 +42,7 @@ const Header = () => {
           {user ? (
             <li>
               {user && (
-                <div>
+                <div className="flex">
                   <img
                     className="h-14 rounded-full"
                     src={user?.photoURL}

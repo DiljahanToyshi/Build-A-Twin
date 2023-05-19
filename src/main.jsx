@@ -8,11 +8,14 @@ import AllToys from './Components/AllToys';
 import MyToys from './Components/MyToys';
 import Register from './Components/Shared/Register';
 import AuthProvider from './providers/Authprovider';
+import PrivateRoute from './privateRoute/PrivateRoute';
+import ErrorPage from './Components/ErrorPage';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
+    errorElement:<ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -32,7 +35,12 @@ const router = createBrowserRouter([
       },
       {
         path: "myToys",
-        element: <MyToys></MyToys>,
+        element: (
+          <PrivateRoute>
+            {" "}
+            <MyToys></MyToys>
+          </PrivateRoute>
+        ),
       },
     ],
   },

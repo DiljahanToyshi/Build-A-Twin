@@ -5,10 +5,10 @@ import { AuthContext } from "../../providers/Authprovider";
 
 const Login = () => {
   const { signIn, signInWithGoogle } = useContext(AuthContext);
-//   const navigate = useNavigate();
-//   const location = useLocation();
+  const navigate = useNavigate();
+  const location = useLocation();
 //   console.log("login page location", location);
-//   const from = location.state?.from?.pathname || "/";
+  const from = location.state?.from?.pathname || "/";
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -21,7 +21,7 @@ const Login = () => {
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
-        // navigate(from, { replace: true });
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.log(error);
@@ -74,7 +74,7 @@ const Login = () => {
             login
           </button>
           <button
-            className="btn btn-active border-0 text-white font-semibold bg-indigo-500"
+            className="rounded-md p-3 border-2 border-indigo-500 text-indigo-500 hover:bg-indigo-500 hover:text-white  font-semibold "
             onClick={handleGoogleSignIn}
           >
             Login with Google
