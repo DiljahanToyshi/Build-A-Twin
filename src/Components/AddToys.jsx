@@ -3,6 +3,7 @@ import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 
 import { AuthContext } from "../providers/Authprovider";
+import Swal from "sweetalert2";
  
 
 const AddToys = () => {
@@ -24,9 +25,11 @@ const {
     })
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
-      });
-    console.log(data);
+        console.log(result)
+        if (result.insertedId)
+        {Swal.fire("Add a toy successfully")}
+      })
+   ;
 
   };
  
@@ -107,7 +110,7 @@ const {
               <label htmlFor="Email">Email</label> <br />
               <input
                 className="text-input"
-                value={user?.email}
+                defaultValue={user?.email}
                 {...register("sellerEmail")}
                 placeholder="your email"
                 type="email"

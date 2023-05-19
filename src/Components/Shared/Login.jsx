@@ -82,7 +82,7 @@ const Login = () => {
         </div>
         <br />
         <Form.Text className="text-indigo-800">
-          New to Build A Twin? <Link to="/register">Register</Link>
+          New to Build A Twin? <Link to="/register">Please Register</Link>
         </Form.Text>
         <Form.Text className="text-success"></Form.Text>
         <Form.Text className="text-danger"></Form.Text>

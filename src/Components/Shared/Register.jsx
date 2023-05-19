@@ -88,7 +88,7 @@ const [error,setError] = useState('');
         </button>
         <br />
         <Form.Text className="text-indigo-500">
-          Already Have an Account? <Link to="/login">Login</Link>
+          Already Have an Account? <Link to="/login">Please Login</Link>
         </Form.Text>
         <Form.Text className="text-success"></Form.Text>
         <Form.Text className="text-danger"></Form.Text>

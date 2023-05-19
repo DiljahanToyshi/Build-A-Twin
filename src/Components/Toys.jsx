@@ -8,14 +8,12 @@ const Toys = ({ toy }) => {
        return <LoadingSpinner />;
      }
   const {_id,
-    availableQuantity,
-    description,
     price,
     picture,
     rating,
     // eslint-disable-next-line react/prop-types
     subCategory,toyName
-  } = toy;
+  } = toy || {};
 
   return (
     <>
