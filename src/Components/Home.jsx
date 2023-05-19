@@ -11,9 +11,12 @@ const Home = () => {
             <img src={img4} className="w-full rounded-md h-screen" />
 
             <div className="absolute flex sm:justify-between  gap-3 transform -translate-y-1/2 left-5 right-5 bottom-48 mr-16 text-white ">
-              <div className="  md:ml-8 space-y-7 w-1/3">
-                <h2 className="text-5xl font-semibold"> Make your Twin WITH US </h2>
-                <p className='font-semibold'>
+              <div className="  md:ml-8  space-y-7 w-1/3 ">
+                <h2 className="text-5xl  font-semibold">
+                  {" "}
+                  Make your Twin WITH US{" "}
+                </h2>
+                <p className="font-semibold">
                   Buy all kinds of intellectual games, toys, puzzles in our
                   online store and give your child the pleasure of love &
                   entertainment.{" "}
@@ -46,8 +49,11 @@ const Home = () => {
             />
             <div className="absolute flex sm:justify-between  gap-3 transform -translate-y-1/2 left-5 right-5 bottom-48 mr-16 text-white ">
               <div className="  md:ml-8 space-y-7 w-1/3">
-                <h2 className="text-5xl font-semibold"> Make your Twin WITH US </h2>
-                <p className='font-semibold'>
+                <h2 className="text-5xl font-semibold">
+                  {" "}
+                  Make your Twin WITH US{" "}
+                </h2>
+                <p className="font-semibold">
                   Buy all kinds of intellectual games, toys, puzzles in our
                   online store and give your child the pleasure of love &
                   entertainment.{" "}
@@ -58,10 +64,16 @@ const Home = () => {
                 </button>
               </div>
               <div className="flex gap-5 md:mt-64">
-                <a href="#slide1" className="btn btn-circle  border-indigo-700 bg-indigo-200">
+                <a
+                  href="#slide1"
+                  className="btn btn-circle  border-indigo-700 bg-indigo-200"
+                >
                   ❮
                 </a>
-                <a href="#slide3" className="btn btn-circle  border-indigo-700 bg-indigo-200">
+                <a
+                  href="#slide3"
+                  className="btn btn-circle  border-indigo-700 bg-indigo-200"
+                >
                   ❯
                 </a>
               </div>
@@ -72,8 +84,11 @@ const Home = () => {
             <img src={img1} className="w-full rounded-md h-screen" />
             <div className="absolute flex sm:justify-between  gap-3 transform -translate-y-1/2 left-5 right-5 bottom-48 mr-16 text-white ">
               <div className="  md:ml-8 space-y-7 w-1/3">
-                <h2 className="text-5xl font-semibold"> Make your Twin WITH US </h2>
-                <p className='font-semibold'>
+                <h2 className="text-5xl font-semibold">
+                  {" "}
+                  Make your Twin WITH US{" "}
+                </h2>
+                <p className="font-semibold">
                   Buy all kinds of intellectual games, toys, puzzles in our
                   online store and give your child the pleasure of love &
                   entertainment.{" "}
@@ -84,10 +99,16 @@ const Home = () => {
                 </button>
               </div>
               <div className="flex gap-5 md:mt-64">
-                <a href="#slide2" className="btn btn-circle  border-indigo-700 bg-indigo-200">
+                <a
+                  href="#slide2"
+                  className="btn btn-circle  border-indigo-700 bg-indigo-200"
+                >
                   ❮
                 </a>
-                <a href="#slide4" className="btn btn-circle  border-indigo-700 bg-indigo-200">
+                <a
+                  href="#slide4"
+                  className="btn btn-circle  border-indigo-700 bg-indigo-200"
+                >
                   ❯
                 </a>
               </div>
@@ -97,8 +118,11 @@ const Home = () => {
             <img src={img3} className="w-full rounded-md h-screen" />
             <div className="absolute flex sm:justify-between  gap-3 transform -translate-y-1/2 left-5 right-5 bottom-48 mr-16 text-white ">
               <div className="  md:ml-8 space-y-7 w-1/3">
-                <h2 className="text-5xl font-semibold"> Make your Twin WITH US </h2>
-                <p className='font-semibold'>
+                <h2 className="text-5xl font-semibold">
+                  {" "}
+                  Make your Twin WITH US{" "}
+                </h2>
+                <p className="font-semibold">
                   Buy all kinds of intellectual games, toys, puzzles in our
                   online store and give your child the pleasure of love &
                   entertainment.{" "}
@@ -109,10 +133,16 @@ const Home = () => {
                 </button>
               </div>
               <div className="flex gap-5 md:mt-64">
-                <a href="#slide3" className="btn btn-circle  border-indigo-700 bg-indigo-200">
+                <a
+                  href="#slide3"
+                  className="btn btn-circle  border-indigo-700 bg-indigo-200"
+                >
                   ❮
                 </a>
-                <a href="#slide5" className="btn btn-circle  border-indigo-700 bg-indigo-200">
+                <a
+                  href="#slide5"
+                  className="btn btn-circle  border-indigo-700 bg-indigo-200"
+                >
                   ❯
                 </a>
               </div>
@@ -122,8 +152,11 @@ const Home = () => {
             <img src={img2} className="w-full rounded-md h-screen" />
             <div className="absolute flex sm:justify-between  gap-3 transform -translate-y-1/2 left-5 right-5 bottom-48 mr-16 text-white ">
               <div className="  md:ml-8 space-y-7 w-1/3">
-                <h2 className="text-5xl font-semibold"> Make your Twin WITH US </h2>
-                <p className='font-semibold'>
+                <h2 className="text-5xl font-semibold">
+                  {" "}
+                  Make your Twin WITH US{" "}
+                </h2>
+                <p className="font-semibold">
                   Buy all kinds of intellectual games, toys, puzzles in our
                   online store and give your child the pleasure of love &
                   entertainment.{" "}
@@ -134,10 +167,16 @@ const Home = () => {
                 </button>
               </div>
               <div className="flex gap-5 md:mt-64">
-                <a href="#slide4" className="btn btn-circle  border-indigo-700 bg-indigo-200">
+                <a
+                  href="#slide4"
+                  className="btn btn-circle  border-indigo-700 bg-indigo-200"
+                >
                   ❮
                 </a>
-                <a href="#slide1" className="btn btn-circle  border-indigo-700 bg-indigo-200">
+                <a
+                  href="#slide1"
+                  className="btn btn-circle  border-indigo-700 bg-indigo-200"
+                >
                   ❯
                 </a>
               </div>

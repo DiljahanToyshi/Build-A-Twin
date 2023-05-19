@@ -1,14 +1,18 @@
 import  { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+
 import {
   Bars3BottomRightIcon,
   XMarkIcon,
 } from "@heroicons/react/24/solid";
 import logo from './../../assets/images.png'
 import { AuthContext } from "../../providers/Authprovider";
+import { useForm } from "react-hook-form";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
+    const { register } = useForm();
+
     const hanldeLogOut = () => {
       logOut()
         .then(() => {})
@@ -91,12 +95,26 @@ const Header = () => {
           </li>
           <li>
             <NavLink
-              to="/allToys"
+              to="/addToys"
               className={({ isActive }) =>
                 isActive ? "text-blue-700 text-xl font-semibold" : "default"
               }
             >
-              All Toys
+              Add Toys
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/allToys"
+              className= "text-blue-700 text-xl font-semibold"
+            >
+              <select {...register("category")}>
+                <option value="Disney Princess">Disney Princess</option>
+                <option value="Frozen Dolls">Frozen Dolls</option>
+                <option value="Animation Characters">Animation Characters</option>
+                <option value="others">others</option>
+                <option value="All toys">All toys</option>
+              </select>
             </NavLink>
           </li>
         </ul>
