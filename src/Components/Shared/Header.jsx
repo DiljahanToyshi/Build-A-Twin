@@ -41,7 +41,7 @@ const Header = () => {
               Home
             </NavLink>
           </li>
-          {user ? (
+          {user ?.email? (
             <li>
               {user && (
                 <div className="flex">
