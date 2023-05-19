@@ -36,11 +36,11 @@ const [error,setError] = useState('');
 
 
   return (
-    <Container className=" md:my-20 ml-3 md:ml-96 md:px-48  ">
+    <Container className=" md:my-20 ml-3 md:ml-64 md:px-48  ">
       <h3 className="text-5xl font-semibold mb-4 text-indigo-700">
         Please Register
       </h3>
-      <Form onSubmit={handleRegister} className="pr-56 pl-12 space-y-6">
+      <Form onSubmit={handleRegister} className="md:pr-96 pl-1 space-y-6">
         <div className="form-control">
           <label htmlFor="name">Name</label>
           <input

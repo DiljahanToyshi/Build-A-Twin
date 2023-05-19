@@ -40,11 +40,11 @@ const Login = () => {
   };
 
   return (
-    <Container className="md:mt-20 ml-3 md:ml-96 md:px-48 w-25 ">
+    <Container className="md:my-20 ml-3 md:ml-64 md:px-48  ">
       <h3 className="text-5xl font-semibold mb-4 text-indigo-700">
         Please Login
       </h3>
-      <Form onSubmit={handleLogin} className="md:pr-52 md:mr-12  space-y-6 m-5">
+      <Form onSubmit={handleLogin} className="md:pr-96 pl-1  space-y-6 m-5">
         <div className="form-control">
           <label htmlFor="name">Name</label>
           <input type="text" name="name" placeholder="Your Name" required />

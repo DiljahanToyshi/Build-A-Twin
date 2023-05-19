@@ -1,0 +1,176 @@
+[
+     {
+       "picture": "https://example.com/toy_picture.jpg",
+       "toyName": "Disney Princess Doll Set",
+       "subCategory": "Disney Princess",
+       "sellerName": "Toy Kingdom",
+       "sellerEmail": "sales@toykingdom.com",
+       "price": 29.99,
+       "rating": 4.8,
+       "availableQuantity": 5,
+       "description": "This Disney Princess Doll Set features all your favorite princesses for endless imaginative play."
+     },
+     {
+       "picture": "https://example.com/frozen_doll.jpg",
+       "toyName": "Frozen Elsa Doll",
+       "subCategory": "Frozen Dolls",
+       "sellerName": "Toy World",
+       "sellerEmail": "sales@toyworld.com",
+       "price": 19.99,
+       "rating": 4.5,
+       "availableQuantity": 3,
+       "description": "Bring home the magic of Disney's Frozen with this Elsa doll that sings 'Let It Go' when you press the button on her necklace."
+     },
+     {
+       "picture": "toy_picture.jpg",
+       "toyName": "Disney Princess Doll Set",
+       "subCategory": "Disney Princess",
+       "sellerName": "Toy Kingdom",
+       "sellerEmail": "sales@toykingdom.com",
+       "price": 29.99,
+       "rating": 4.8,
+       "availableQuantity": 5,
+       "description": "This Disney Princess Doll Set features all your favorite princesses for endless imaginative play."
+     },
+      {
+        "picture": "toy_picture.jpg",
+        "toyName": "Disney Princess Doll",
+        "subCategory": "Disney Princess",
+        "sellerName": "Magic Toys",
+        "sellerEmail": "sales@magictoys.com",
+        "price": 24.99,
+        "rating": 4.7,
+        "availableQuantity": 8,
+        "description": "This Disney Princess Doll is perfect for fans of the magical princesses. Bring your favorite princesses to life with this enchanting toy!"
+      },
+      {
+  "picture": "toy2_picture.jpg",
+  "toyName": "Elsa Frozen Doll",
+  "subCategory": "Frozen Dolls",
+  "sellerName": "Frozen World",
+  "sellerEmail": "sales@frozenworld.com",
+  "price": 19.99,
+  "rating": 4.5,
+  "availableQuantity": 12,
+  "description": "Let it go with this beautiful Elsa Frozen Doll. Recreate magical moments from the beloved Frozen movie!"
+},
+ {
+   "picture": "toy3_picture.jpg",
+   "toyName": "Buzz Lightyear Action Figure",
+   "subCategory": "Animation Characters",
+   "sellerName": "Toy Galaxy",
+   "sellerEmail": "sales@toysgalaxy.com",
+   "price": 29.99,
+   "rating": 4.8,
+   "availableQuantity": 5,
+   "description": "To infinity and beyond! Join the adventures with this Buzz Lightyear Action Figure from the hit animated movie series."
+ },{
+   "picture": "disney_princess.jpg",
+   "toyName": "Disney Princess Doll",
+   "subCategory": "Disney Princess",
+   "sellerName": "Magic Toys",
+   "sellerEmail": "sales@magictoys.com",
+   "price": 24.99,
+   "rating": 4.7,
+   "availableQuantity": 8,
+   "description": "This Disney Princess Doll is perfect for fans of the magical princesses. Bring your favorite princesses to life with this enchanting toy!"
+ },
+ {
+   "picture": "frozen_dolls.jpg",
+   "toyName": "Elsa and Anna Doll Set",
+   "subCategory": "Frozen Dolls",
+   "sellerName": "Frozen World",
+   "sellerEmail": "sales@frozenworld.com",
+   "price": 19.99,
+   "rating": 4.5,
+   "availableQuantity": 12,
+   "description": "Recreate the magic of the beloved Frozen movie with this Elsa and Anna Doll Set. Let your imagination soar with these beautiful dolls!"
+ },
+ {
+   "picture": "animation_characters.jpg",
+   "toyName": "Buzz Lightyear Action Figure",
+   "subCategory": "Animation Characters",
+   "sellerName": "Toy Galaxy",
+   "sellerEmail": "sales@toysgalaxy.com",
+   "price": 29.99,
+   "rating": 4.8,
+   "availableQuantity": 5,
+   "description": "Join the adventures with this Buzz Lightyear Action Figure from the hit animated movie series. Let your creativity take off!"
+ },
+ {
+   "picture": "frozen_dolls.jpg",
+   "toyName": "Elsa and Anna Doll Set",
+   "subCategory": "Frozen Dolls",
+   "sellerName": "Frozen World",
+   "sellerEmail": "sales@frozenworld.com",
+   "price": 19.99,
+   "rating": 4.5,
+   "availableQuantity": 12,
+   "description": "Recreate the magic of the beloved Frozen movie with this Elsa and Anna Doll Set. Let your imagination soar with these beautiful dolls!"
+ },
+ {
+   "picture": "animation_characters.jpg",
+   "toyName": "Buzz Lightyear Action Figure",
+   "subCategory": "Animation Characters",
+   "sellerName": "Toy Galaxy",
+   "sellerEmail": "sales@toysgalaxy.com",
+   "price": 29.99,
+   "rating": 4.8,
+   "availableQuantity": 5,
+   "description": "Join the adventures with this Buzz Lightyear Action Figure from the hit animated movie series. Let your creativity take off!"
+ },{
+   "pictureURL": "https://example.com/disney_princess1.jpg",
+   "toyName": "Cinderella Doll",
+   "subCategory": "Disney Princess",
+   "sellerName": "Enchanting Toys",
+   "sellerEmail": "sales@enchantingtoys.com",
+   "price": 29.99,
+   "rating": 4.7,
+   "availableQuantity": 10,
+   "description": "Let the magic unfold with this beautiful Cinderella Doll. Recreate classic Disney moments with this enchanting toy!"
+ },
+ {
+   "pictureURL": "https://example.com/frozen_dolls2.jpg",
+   "toyName": "Anna and Olaf Plush Set",
+   "subCategory": "Frozen Dolls",
+   "sellerName": "Winter Wonderland Toys",
+   "sellerEmail": "sales@winterwonderlandtoys.com",
+   "price": 24.99,
+   "rating": 4.8,
+   "availableQuantity": 12,
+   "description": "Embark on a frosty adventure with this adorable Anna and Olaf Plush Set. Join the beloved characters in the world of Frozen!"
+ },
+ {
+   "pictureURL": "https://example.com/frozen_dolls1.jpg",
+   "toyName": "Elsa Singing Doll",
+   "subCategory": "Frozen Dolls",
+   "sellerName": "Frozen Fantasy",
+   "sellerEmail": "sales@frozenfantasy.com",
+   "price": 19.99,
+   "rating": 4.6,
+   "availableQuantity": 8,
+   "description": "Experience the magic of Frozen with this Elsa Singing Doll. Press the button and listen to Elsa sing her iconic songs!"
+ },
+ {
+   "pictureURL": "https://example.com/animation_characters1.jpg",
+   "toyName": "Buzz Lightyear Action Figure",
+   "subCategory": "Animation Characters",
+   "sellerName": "Toy Galaxy",
+   "sellerEmail": "sales@toysgalaxy.com",
+   "price": 29.99,
+   "rating": 4.8,
+   "availableQuantity": 5,
+   "description": "Join the adventures with this Buzz Lightyear Action Figure from the hit animated movie series. Let your creativity take off!"
+ },
+ {
+  "pictureURL": "https://example.com/animation_characters2.jpg",
+  "toyName": "Mickey Mouse Plush Toy",
+  "subCategory": "Animation Characters",
+  "sellerName": "Magic Merchandise",
+  "sellerEmail": "sales@magicmerch.com",
+  "price": 19.99,
+    "rating": 4.8,
+   "availableQuantity": 5,
+   "description": "Join the adventures with this Buzz Lightyear Action Figure from the hit animated movie series. Let your creativity take off!"}
+
+]

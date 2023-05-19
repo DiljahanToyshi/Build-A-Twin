@@ -22,7 +22,7 @@ const Header = () => {
         <Link to="/" className="inline-flex items-center">
           <img className="h-10 " src={logo} alt="" />
 
-          <span className="ml-2 text-xl font-bold tracking-wide text-gray-800">
+          <span className="ml-2 text-xl font-bold tracking-wide ">
             Build A Twin
           </span>
         </Link>
