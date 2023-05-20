@@ -5,7 +5,7 @@ import img4 from "../../assets/h4.avif";
 import img5 from "../../assets/h5.avif";
 const About = () => {
   return (
-    <div className="my-9">
+    <div className="my-12">
       <p className="m-8 text-5xl font-serif text-center text-indigo-600">
         France’s No.1 Toy Brand
       </p>

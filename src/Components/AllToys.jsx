@@ -34,7 +34,7 @@ const AllToys = () => {
             placeholder="Search…"
             className="input input-bordered"
           />
-          <button onClick={handleSearch} className="btn btn-square">
+          <button onClick={handleSearch} className="btn btn-square bg-indigo-600">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"

@@ -1,8 +1,8 @@
 
 const Service = () => {
   return (
-    <div className="mt-16">
-      <p className="m-8 text-5xl font-serif text-center text-indigo-600">
+    <div className="my-16">
+      <p className="mt-8 text-5xl font-serif text-center text-indigo-600">
         Our Service
       </p>
       <footer className="footer p-10 text-indigo-500 ">
