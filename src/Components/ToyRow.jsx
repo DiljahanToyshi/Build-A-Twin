@@ -1,12 +1,9 @@
 /* eslint-disable react/prop-types */
 // eslint-disable-next-line react/prop-types
-import Swal from "sweetalert2";
 
 import { Link } from "react-router-dom";
-import { useState } from "react";
 
-const ToyRow = ({ toy,index }) => {
-  const [toys,setToys] = useState([]);
+const ToyRow = ({ toy, index, handleDelete }) => {
   const {
     _id,
     price,
@@ -17,24 +14,7 @@ const ToyRow = ({ toy,index }) => {
     subCategory,
     toyName,
   } = toy;
-    const handleDelete = (id) => {
-      const proceed = confirm("Are You sure you want to delete");
-      if (proceed) {
-        fetch(`http://localhost:5000/remove/${id}`, {
-          method: "DELETE",
-          headers: { "Content-Type": "application/json" },
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            console.log(data);
-            if (data.deletedCount > 0) {
-              Swal.fire("deleted successful");
-              const remaining = toys.filter((toy) => toy._id !== id);
-              setToys(remaining);
-            }
-          });
-      }
-    };
+
   return (
     <tr>
       <td>{index + 1}.</td>
@@ -75,10 +55,7 @@ const ToyRow = ({ toy,index }) => {
       </th>
       <th>
         <Link to={`/update/${_id}`}>
-          <button
-            
-            className="rounded-md p-3 border-2 border-indigo-500 text-indigo-500 hover:bg-indigo-500 hover:text-white  font-semibold"
-          >
+          <button className="rounded-md p-3 border-2 border-indigo-500 text-indigo-500 hover:bg-indigo-500 hover:text-white  font-semibold">
             Update
           </button>
         </Link>

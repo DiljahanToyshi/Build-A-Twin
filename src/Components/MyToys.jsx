@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../providers/Authprovider";
 import { useNavigate } from "react-router-dom";
 import ToyRow from "./ToyRow";
+import Swal from "sweetalert2";
 
 const MyToys = () => {
     const {user} = useContext(AuthContext)
@@ -21,7 +22,24 @@ const MyToys = () => {
         });
     }, [url, navigate]);
 
-
+  const handleDelete = (id) => {
+    const proceed = confirm("Are You sure you want to delete");
+    if (proceed) {
+      fetch(`http://localhost:5000/remove/${id}`, {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          if (data.deletedCount > 0) {
+            Swal.fire("deleted successful");
+            const remaining = toys.filter((toy) => toy._id !== id);
+            setToys(remaining);
+          }
+        });
+    }
+  };
 
    
     return (
@@ -48,7 +66,12 @@ const MyToys = () => {
             </thead>
             <tbody>
               {toys.map((toy, index) => (
-                <ToyRow key={toy._id} toy={toy} index={index}></ToyRow>
+                <ToyRow
+                  key={toy._id}
+                  toy={toy}
+                  index={index}
+                  handleDelete={handleDelete}
+                ></ToyRow>
               ))}
             </tbody>
           </table>

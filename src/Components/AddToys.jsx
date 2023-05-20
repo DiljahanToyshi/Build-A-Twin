@@ -9,6 +9,7 @@ import Swal from "sweetalert2";
 const AddToys = () => {
   const { user } = useContext(AuthContext);
 //  const [selectedOption, setSelectedOption] = useState(null);
+
 const {
     register,
     handleSubmit,

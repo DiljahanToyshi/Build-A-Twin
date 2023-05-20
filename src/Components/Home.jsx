@@ -1,16 +1,19 @@
 import img1 from '../assets/4.jpg';
-import img2 from '../assets/5.jpg';
+import img2 from '../assets/3.jpg';
 import img3 from '../assets/6.jpg';
+import img5 from '../assets/5.jpg';
 import img4 from '../assets/7.jpeg';
 import About from './Design/About';
 const Home = () => {
     return (
       <div>
-        <div className="carousel w-full m-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl ">
+        <div
+          className="carousel w-full h-[600px] m-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl "
+        >
           <div id="slide1" className="carousel-item relative w-full">
-            <img src={img4} className="w-full rounded-md h-[600px]" />
+            <img src={img4} className="w-full rounded-md " />
 
-            <div className="absolute flex sm:justify-between  gap-3 transform -translate-y-1/2 left-5 right-5 bottom-48 mr-16 text-white ">
+            <div className="absolute flex sm:justify-between  gap-3  left-5 right-5 bottom-48 mr-16 text-white ">
               <div className="  md:ml-8  space-y-7 w-1/3 ">
                 <h2 className="text-5xl  font-semibold">
                   {" "}
@@ -44,10 +47,10 @@ const Home = () => {
           </div>
           <div id="slide2" className="carousel-item relative w-full">
             <img
-              src="https://i.ibb.co/Hz6m3Pk/download-7.jpg"
-              className="w-full rounded-md h-[600px]"
+              src={img2}
+              className="w-full rounded-md "
             />
-            <div className="absolute flex sm:justify-between  gap-3 transform -translate-y-1/2 left-5 right-5 bottom-48 mr-16 text-white ">
+            <div className="absolute flex sm:justify-between  gap-3  left-5 right-5 bottom-48 mr-16 text-white ">
               <div className="  md:ml-8 space-y-7 w-1/3">
                 <h2 className="text-5xl font-semibold">
                   {" "}
@@ -81,8 +84,8 @@ const Home = () => {
           </div>
 
           <div id="slide3" className="carousel-item relative w-full">
-            <img src={img1} className="w-full rounded-md h-[600px]" />
-            <div className="absolute flex sm:justify-between  gap-3 transform -translate-y-1/2 left-5 right-5 bottom-48 mr-16 text-white ">
+            <img src={img3} className="w-full rounded-md " />
+            <div className="absolute flex sm:justify-between  gap-3  left-5 right-5 bottom-48 mr-16 text-white ">
               <div className="  md:ml-8 space-y-7 w-1/3">
                 <h2 className="text-5xl font-semibold">
                   {" "}
@@ -115,8 +118,8 @@ const Home = () => {
             </div>
           </div>
           <div id="slide4" className="carousel-item relative w-full">
-            <img src={img3} className="w-full rounded-md h-[600px]" />
-            <div className="absolute flex sm:justify-between  gap-3 transform -translate-y-1/2 left-5 right-5 bottom-48 mr-16 text-white ">
+            <img src={img5} className="w-full rounded-md " />
+            <div className="absolute flex sm:justify-between  gap-3  left-5 right-5 bottom-48 mr-16 text-white ">
               <div className="  md:ml-8 space-y-7 w-1/3">
                 <h2 className="text-5xl font-semibold">
                   {" "}
@@ -149,8 +152,8 @@ const Home = () => {
             </div>
           </div>
           <div id="slide5" className="carousel-item relative w-full">
-            <img src={img2} className="w-full rounded-md h-[600px]" />
-            <div className="absolute flex sm:justify-between  gap-3 transform -translate-y-1/2 left-5 right-5 bottom-48 mr-16 text-white ">
+            <img src={img1} className="w-full rounded-md " />
+            <div className="absolute flex sm:justify-between  gap-3  left-5 right-5 bottom-48 mr-16 text-white ">
               <div className="  md:ml-8 space-y-7 w-1/3">
                 <h2 className="text-5xl font-semibold">
                   {" "}
