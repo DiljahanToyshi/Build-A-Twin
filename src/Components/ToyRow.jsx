@@ -1,8 +1,12 @@
 /* eslint-disable react/prop-types */
 // eslint-disable-next-line react/prop-types
-// import Swal from "sweetalert2";
+import Swal from "sweetalert2";
 
-const ToyRow = ({ toy, handleUpdate }) => {
+import { Link } from "react-router-dom";
+import { useState } from "react";
+
+const ToyRow = ({ toy,index }) => {
+  const [toys,setToys] = useState([]);
   const {
     _id,
     price,
@@ -13,27 +17,28 @@ const ToyRow = ({ toy, handleUpdate }) => {
     subCategory,
     toyName,
   } = toy;
-  console.log(toy);
     const handleDelete = (id) => {
       const proceed = confirm("Are You sure you want to delete");
       if (proceed) {
-        fetch(`https://localhost:5000/remove/${id}`, {
+        fetch(`http://localhost:5000/remove/${id}`, {
           method: "DELETE",
           headers: { "Content-Type": "application/json" },
         })
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
-            // if (data.deletedCount > 0) {
-            //   Swal.fire("deleted successful");
-            //   const remaining = toys.filter((toy) => toy._id !== id);
-            //   setToys(remaining);
-            // }
+            if (data.deletedCount > 0) {
+              Swal.fire("deleted successful");
+              const remaining = toys.filter((toy) => toy._id !== id);
+              setToys(remaining);
+            }
           });
       }
     };
   return (
     <tr>
+      <td>{index + 1}.</td>
+
       <td>
         <div className="avatar">
           <div className="rounded w-24 h-24">
@@ -69,16 +74,14 @@ const ToyRow = ({ toy, handleUpdate }) => {
         </button>
       </th>
       <th>
-        {status === "confirm" ? (
-          <span className="font-bold text-primary">Confirmed</span>
-        ) : (
+        <Link to={`/update/${_id}`}>
           <button
-            onClick={() => handleUpdate(_id)}
-            className="btn btn-ghost btn-xs"
+            
+            className="rounded-md p-3 border-2 border-indigo-500 text-indigo-500 hover:bg-indigo-500 hover:text-white  font-semibold"
           >
             Update
           </button>
-        )}
+        </Link>
       </th>
     </tr>
   );

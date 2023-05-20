@@ -13,6 +13,7 @@ import ErrorPage from './Components/ErrorPage';
 import SingleToyDetails from './Components/SingleToyDetails';
 import AddToys from './Components/AddToys';
 import Blog from './Components/Blog';
+import UpdateModal from './Components/UpdateModal';
 
 const router = createBrowserRouter([
   {
@@ -34,7 +35,13 @@ const router = createBrowserRouter([
       },
       {
         path: "blogs",
-        element:<Blog></Blog>,
+        element: <Blog></Blog>,
+      },
+      {
+        path: "update/:id",
+        element: <UpdateModal></UpdateModal>,
+        loader: ({params}) =>
+          fetch(`http://localhost:5000/update/${params.id}`),
       },
       {
         path: "allToys",

@@ -3,13 +3,10 @@ import LoadingSpinner from "./LoadingSpinner";
 
 const SingleToyDetails = () => {
   const navigation = useNavigation();
-
-  console.log(navigation.state);
   if (navigation.state === "loading") {
     return <LoadingSpinner />;
   }
   const toy = useLoaderData();
-  console.log(toy);
 const {_id,availableQuantity,sellerName, description, price, picture,rating,subCategory, toyName,
 } = toy;
 
@@ -34,7 +31,7 @@ const {_id,availableQuantity,sellerName, description, price, picture,rating,subC
             {toyName}
           </h5>
           <p className=" text-gray-900">
-            Description: {description.substring(0, 50)}
+            Description: {description}
           </p>
           <p className=" text-gray-900">SellerName: {sellerName}</p>
           <p className=" text-gray-900">Quantity: {availableQuantity}</p>

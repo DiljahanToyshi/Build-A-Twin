@@ -23,27 +23,7 @@ const MyToys = () => {
 
 
 
-     const handleUpdate = (id) => {
-       fetch(`https://car-doctor-server-smoky.vercel.app/addToys/${id}`, {
-         method: "PATCH",
-         headers: {
-           "content-type": "application/json",
-         },
-         body: JSON.stringify({ status: "confirm" }),
-       })
-         .then((res) => res.json())
-         .then((data) => {
-           console.log(data);
-           if (data.modifiedCount > 0) {
-             // update state
-             const remaining = toys.filter((toy) => toy._id !== id);
-             const updated = toys.find((toy) => toy._id === id);
-             updated.status = "confirm";
-             const newToys = [updated, ...remaining];
-             setToys(newToys);
-           }
-         });
-     };
+   
     return (
       <div>
         <div className="overflow-x-auto w-full">
@@ -51,6 +31,7 @@ const MyToys = () => {
             {/* head */}
             <thead>
               <tr>
+                <th>SQ.</th>
                 <th>Image</th>
                 <th>Category</th>
                 <th>Toy Name</th>
@@ -62,15 +43,12 @@ const MyToys = () => {
                     <input type="checkbox" className="checkbox" />
                   </label>
                 </th>
+                <th>Edit</th>
               </tr>
             </thead>
             <tbody>
-              {toys.map((toy) => (
-                <ToyRow
-                  key={toy._id}
-                  toy={toy}
-                  handleUpdate={handleUpdate}
-                ></ToyRow>
+              {toys.map((toy, index) => (
+                <ToyRow key={toy._id} toy={toy} index={index}></ToyRow>
               ))}
             </tbody>
           </table>
