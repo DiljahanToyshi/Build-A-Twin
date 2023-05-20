@@ -7,7 +7,7 @@ const About = () => {
   return (
     <div className="my-9">
       <p className="m-8 text-5xl font-serif text-center text-indigo-600">
-        India’s No.1 Toy Brand
+        France’s No.1 Toy Brand
       </p>
       <div className="md:flex justify-between gap-4 mx-3 ">
         <img className="h-32 rounded-xl " src={img1} alt="" />
