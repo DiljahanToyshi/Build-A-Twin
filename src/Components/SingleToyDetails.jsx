@@ -6,8 +6,9 @@ const SingleToyDetails = () => {
   if (navigation.state === "loading") {
     return <LoadingSpinner />;
   }
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const toy = useLoaderData();
-const {_id,availableQuantity,sellerName, description, price, picture,rating,subCategory, toyName,
+const {availableQuantity,sellerName, description, price, picture,rating, toyName,
 } = toy;
 
   return (

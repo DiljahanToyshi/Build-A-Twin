@@ -1,25 +1,26 @@
 import { useEffect, useState } from "react";
 import Toys from "./Toys";
-import {  useNavigation } from "react-router-dom";
+import { useNavigation } from "react-router-dom";
 import LoadingSpinner from "./LoadingSpinner";
 
 const AllToys = () => {
   const [toys, setToys] = useState([]);
   const navigation = useNavigation();
-  const [searchText,setsearchText] = useState("");
+  const [searchText, setsearchText] = useState("");
   if (navigation.state === "loading") {
-    return <LoadingSpinner />
+    return <LoadingSpinner />;
   }
   // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
-    fetch('http://localhost:5000/toys')
+    fetch("https://assignment-11-server-phi-liard.vercel.app/toys")
       .then((res) => res.json())
       .then((data) => setToys(data));
   }, []);
 
-
-  const handleSearch =() => {
-    fetch(`http://localhost:5000/getToysByText/${searchText}`)
+  const handleSearch = () => {
+    fetch(
+      `https://assignment-11-server-phi-liard.vercel.app/getToysByText/${searchText}`
+    )
       .then((res) => res.json())
       .then((data) => setToys(data));
   };
@@ -34,7 +35,10 @@ const AllToys = () => {
             placeholder="Search…"
             className="input input-bordered"
           />
-          <button onClick={handleSearch} className="btn btn-square bg-indigo-600">
+          <button
+            onClick={handleSearch}
+            className="btn btn-square bg-indigo-600"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"

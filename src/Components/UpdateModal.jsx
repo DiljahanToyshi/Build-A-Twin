@@ -8,16 +8,18 @@ import { useLoaderData, useParams } from "react-router-dom";
 
 const UpdateModal = (props) => {
   const { user } = useContext(AuthContext);
-const toy = useLoaderData();
-const {
-  _id,
-  price,sellerName,
-  picture,description,
-  // eslint-disable-next-line react/prop-types
-  availableQuantity,
-  // eslint-disable-next-line react/prop-types
-  toyName,
-} = toy;
+  const toy = useLoaderData();
+  const {
+    _id,
+    price,
+    sellerName,
+    picture,
+    description,
+    // eslint-disable-next-line react/prop-types
+    availableQuantity,
+    // eslint-disable-next-line react/prop-types
+    toyName,
+  } = toy;
   const {
     register,
     handleSubmit,
@@ -26,7 +28,7 @@ const {
   const onSubmit = (data) => {
     console.log(props);
 
-    fetch(`http://localhost:5000/update/${_id}`, {
+    fetch(`https://assignment-11-server-phi-liard.vercel.app/update/${_id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
@@ -40,10 +42,12 @@ const {
       });
   };
 
-    console.log(_id);
+  console.log(_id);
   return (
     <div className="add-job-container">
-      <p className="m-4 text-4xl md:text-center font-semibold text-white">Update your toy!!</p>
+      <p className="m-4 text-4xl md:text-center font-semibold text-white">
+        Update your toy!!
+      </p>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="md:flex gap-14 justify-center">
           {errors.exampleRequired && <span>This field is required</span>}

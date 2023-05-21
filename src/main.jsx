@@ -1,19 +1,19 @@
-import ReactDOM from 'react-dom/client'
-import './index.css'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import App from './App'
-import Home from './Components/Home';
-import Login from './Components/Shared/Login';
-import AllToys from './Components/AllToys';
-import MyToys from './Components/MyToys';
-import Register from './Components/Shared/Register';
-import AuthProvider from './providers/Authprovider';
-import PrivateRoute from './privateRoute/PrivateRoute';
-import ErrorPage from './Components/ErrorPage';
-import SingleToyDetails from './Components/SingleToyDetails';
-import AddToys from './Components/AddToys';
-import Blog from './Components/Blog';
-import UpdateModal from './Components/UpdateModal';
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import App from "./App";
+import Home from "./Components/Home";
+import Login from "./Components/Shared/Login";
+import AllToys from "./Components/AllToys";
+import MyToys from "./Components/MyToys";
+import Register from "./Components/Shared/Register";
+import AuthProvider from "./providers/Authprovider";
+import PrivateRoute from "./privateRoute/PrivateRoute";
+import ErrorPage from "./Components/ErrorPage";
+import SingleToyDetails from "./Components/SingleToyDetails";
+import AddToys from "./Components/AddToys";
+import Blog from "./Components/Blog";
+import UpdateModal from "./Components/UpdateModal";
 
 const router = createBrowserRouter([
   {
@@ -40,8 +40,10 @@ const router = createBrowserRouter([
       {
         path: "update/:id",
         element: <UpdateModal></UpdateModal>,
-        loader: ({params}) =>
-          fetch(`http://localhost:5000/update/${params.id}`),
+        loader: ({ params }) =>
+          fetch(
+            `https://assignment-11-server-phi-liard.vercel.app/update/${params.id}`
+          ),
       },
       {
         path: "allToys",
@@ -49,7 +51,11 @@ const router = createBrowserRouter([
       },
       {
         path: "addToys",
-        element: <AddToys></AddToys>,
+        element: (
+          <PrivateRoute>
+            <AddToys></AddToys>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/toys/:id",
@@ -59,7 +65,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/toys/${params.id}`),
+          fetch(
+            `https://assignment-11-server-phi-liard.vercel.app/toys/${params.id}`
+          ),
       },
 
       {

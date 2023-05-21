@@ -4,36 +4,36 @@ import { useForm } from "react-hook-form";
 
 import { AuthContext } from "../providers/Authprovider";
 import Swal from "sweetalert2";
- 
+import { useNavigate } from "react-router-dom";
 
 const AddToys = () => {
   const { user } = useContext(AuthContext);
-//  const [selectedOption, setSelectedOption] = useState(null);
+  const navigate = useNavigate();
+  //  const [selectedOption, setSelectedOption] = useState(null);
 
-const {
+  const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-        console.log(data);
+    console.log(data);
 
-    fetch("http://localhost:5000/addToys", {
+    fetch("https://assignment-11-server-phi-liard.vercel.app/addToys", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     })
       .then((res) => res.json())
       .then((result) => {
-        console.log(result)
-        if (result.insertedId)
-        {Swal.fire("Add a toy successfully")}
-      })
-   ;
-
+        console.log(result);
+        if (result.insertedId) {
+          Swal.fire("Add a toy successfully");
+        }
+      });
   };
- 
+
   //   console.log(user);
   return (
     <div className="add-job-container">
