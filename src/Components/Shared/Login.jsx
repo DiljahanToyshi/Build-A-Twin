@@ -1,93 +1,159 @@
-import  { useContext } from "react";
-import {  Container, Form } from "react-bootstrap";
+import  { useContext, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import {
+  GoogleAuthProvider,
+  getAuth,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+} from "firebase/auth";
+import app from "../../firebase/firebase.config";
 import { AuthContext } from "../../providers/Authprovider";
 
 const Login = () => {
-  const { signIn, signInWithGoogle } = useContext(AuthContext);
+  const auth = getAuth(app);
+  const provider = new GoogleAuthProvider();
+  const [user, setUser] = useState(null);
+  const [show, setSHow] = useState(false);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+  const emailRef = useRef();
+
+  const { signIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
-//   console.log("login page location", location);
+  // console.log(location);
   const from = location.state?.from?.pathname || "/";
 
   const handleLogin = (event) => {
     event.preventDefault();
+
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
     console.log(email, password);
+    setError("");
+    setSuccess("");
+
+    if (!/(?=.*[A-Z])/.test(password)) {
+      setError("Please add at least one uppercase.");
+      return;
+    } else if (password.length < 6) {
+      setError("Password must be 6 characters long");
+      return;
+    }
 
     signIn(email, password)
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
+        form.reset();
         navigate(from, { replace: true });
       })
       .catch((error) => {
         console.log(error);
+        setError(error.message);
       });
-  };
 
-  const handleGoogleSignIn = () => {
-    signInWithGoogle()
+    signInWithEmailAndPassword(auth, email, password)
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
+        if (!loggedUser.emailVerified) {
+          setSuccess("User login successful.");
+          setError("");
+        }
       })
       .catch((error) => {
-        console.log(error);
+        setError(error.message);
+      });
+  };
+  const handleGoogleSignIn = () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const loggedInUser = result.user;
+        console.log(loggedInUser.photoURL);
+        setUser(loggedInUser);
+      })
+      .catch((error) => {
+        console.log(error.message);
       });
   };
 
   return (
-    <Container className="md:my-20 ml-3 md:ml-64 md:px-48  ">
-      <h3 className="text-5xl font-semibold mb-4 text-indigo-700">
-        Please Login
-      </h3>
-      <Form onSubmit={handleLogin} className="md:pr-96 pl-1  space-y-6 m-5">
-        <div className="form-control">
-          <label htmlFor="name">Name</label>
-          <input type="text" name="name" placeholder="Your Name" required />
+    <div className="hero min-h-screen bg-base-200">
+      <div className="hero-content flex-col">
+        <div className="text-center">
+          <h1 className="text-5xl font-bold text-indigo-600">Please Login !</h1>
         </div>
+        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <form onSubmit={handleLogin} className="card-body">
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Email</span>
+              </label>
+              <input
+                ref={emailRef}
+                type="email"
+                name="email"
+                placeholder="email"
+                className="input input-bordered"
+                required
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Password</span>
+              </label>
+              <div className="flex ">
+                <div>
+                  {" "}
+                  <input
+                    type={show ? "text" : "password"}
+                    name="password"
+                    id=""
+                    placeholder="your password"
+                    required
+                  />
+                </div>
+                <div>
+                  <p onClick={() => setSHow(!show)}>
+                    <small>
+                      {show ? (
+                        <span>Hide Password </span>
+                      ) : (
+                        <span>Show Password </span>
+                      )}
+                    </small>
+                  </p>
+                </div>
+              </div>
 
-        <div className="form-control">
-          <label htmlFor="email">Email address</label>
-          <input type="email" name="email" placeholder="Enter email" required />
-        </div>
-
-        <div className="form-control">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            required
-          />
-        </div>
-
-        <div className="md:flex gap-4">
-          {" "}
+              <p className="mb-4 ">
+                <Link to="/register" className="label-text-alt link link-hover">
+                  New to Build Your Twin?{" "}
+                  <span className="text-indigo-600">
+                    Please create an account
+                  </span>
+                </Link>
+              </p>
+            </div>
+            <div className="form-control mt-6">
+              <button className="btn bg-indigo-400 text-white">Login</button>
+            </div>
+          </form>
           <button
-            className="btn btn-active border-0 text-white font-semibold bg-indigo-500"
-            type="submit"
-          >
-            login
-          </button>
-          <button
-            className="rounded-md p-3 border-2 border-indigo-500 text-indigo-500 hover:bg-indigo-500 hover:text-white  font-semibold "
             onClick={handleGoogleSignIn}
+            className="btn btn-outline w-56 ml-10 mb-5"
           >
-            Login with Google
+            {" "}
+          Login with Google
           </button>
+
+          <p className="text-red-600 text-xl font-semibold">{error}</p>
+          <p className="text-green-600 text-xl font-semibold">{success}</p>
         </div>
-        <br />
-        <Form.Text className="text-indigo-800">
-          New to Build A Twin? <Link to="/register">Please Register</Link>
-        </Form.Text>
-        <Form.Text className="text-success"></Form.Text>
-        <Form.Text className="text-danger"></Form.Text>
-      </Form>
-    </Container>
+      </div>
+    </div>
   );
 };
 

@@ -5,7 +5,12 @@ const Service = () => {
       <p className="mt-8 text-5xl font-serif text-center text-indigo-600">
         Our Service
       </p>
-      <footer className="footer p-10 text-indigo-500 ">
+      <footer
+        className="footer p-10 text-indigo-500"
+        data-aos="fade-up"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000"
+      >
         <div>
           <span className="footer-title">
             <img

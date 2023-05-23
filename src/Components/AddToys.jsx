@@ -37,6 +37,8 @@ const AddToys = () => {
   //   console.log(user);
   return (
     <div className="add-job-container">
+      <h1 className="text-5xl font-bold text-indigo-600 text-center">Add your Toy's Collection</h1>
+
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="md:flex gap-14 justify-center">
           {errors.exampleRequired && <span>This field is required</span>}

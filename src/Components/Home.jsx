@@ -5,6 +5,7 @@ import img5 from '../assets/5.jpg';
 import img4 from '../assets/7.jpeg';
 import About from './Design/About';
 import Service from './Design/Service';
+import ToysCollection from './Design/ToysCollection';
 const Home = () => {
     return (
       <div>
@@ -16,7 +17,7 @@ const Home = () => {
 
             <div className="absolute flex sm:justify-between  gap-3  left-5 right-5 bottom-48 mr-16 text-white ">
               <div className="  md:ml-8  space-y-7 w-1/3 ">
-                <h2 className="text-5xl  font-semibold">
+                <h2 className="text-5xl  font-semibold bg-clip-text">
                   {" "}
                   Make your Twin WITH US{" "}
                 </h2>
@@ -187,6 +188,7 @@ const Home = () => {
             </div>
           </div>
         </div>
+        <ToysCollection></ToysCollection>
         <About></About>
        <Service></Service>
       </div>

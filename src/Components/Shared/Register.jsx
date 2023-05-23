@@ -1,99 +1,158 @@
-import  { useContext } from "react";
-import { Container, Form } from "react-bootstrap";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  updateProfile,
+} from "firebase/auth";
 import { AuthContext } from "../../providers/Authprovider";
+import app from "../../firebase/firebase.config";
 
+const auth = getAuth(app);
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
-const [error,setError] = useState('');
+  const [show, setSHow] = useState(false);
+
+  const { user, createUser, setUser } = useContext(AuthContext);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+
   const handleRegister = (event) => {
     event.preventDefault();
+    setSuccess("");
     const form = event.target;
-    const displayName = form.displayName.value;
-    const photo = form.photo.value;
+    const name = form.name.value;
     const email = form.email.value;
+    const photoURL = form.photoURL.value;
     const password = form.password.value;
-    const confirm = form.confirm.value;
-
-    console.log(displayName, photo, email, password, confirm);
-    if (password !== confirm) {
-      setError("your password did not match");
+    console.log(name, email, password, photoURL);
+    if (!/(?=.*[A-Z])/.test(password)) {
+      setError("Please add at least one uppercase");
+      return;
+    } else if (password.length < 6) {
+      setError("Please add at least 6 characters in your password");
       return;
     }
-    createUser(email, password)
+
+    createUserWithEmailAndPassword(auth, email, password)
       .then((result) => {
-        const createdUser = result.user;
-        console.log(createdUser);
-        form.reset();
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        setError("");
+        event.target.reset();
+        setSuccess("User has been created successfully");
+        updateUserData(result.user, name);
       })
       .catch((error) => {
-        console.log(error);
+        console.error(error.message);
+
+        setError(error.message);
       });
   };
-// eslint-disable-next-line no-undef
 
-
+  const updateUserData = (user, name, photoURL) => {
+    updateProfile(user, {
+      displayName: name,
+      photoURL: photoURL,
+    })
+      .then(() => {
+        console.log(user);
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
+  };
 
   return (
-    <Container className=" md:my-20 ml-3 md:ml-64 md:px-48  ">
-      <h3 className="text-5xl font-semibold mb-4 text-indigo-700">
-        Please Register
-      </h3>
-      <Form onSubmit={handleRegister} className="md:pr-96 pl-1 space-y-6">
-        <div className="form-control">
-          <label htmlFor="name">Name</label>
-          <input
-            type="text"
-            name="displayName"
-            placeholder="Your Name"
-            required
-          />
+    <div className="hero min-h-screen bg-base-200">
+      <div className="hero-content flex-col">
+        <div className="text-center">
+          <h1 className="text-5xl font-bold text-indigo-800">
+            Please Register !
+          </h1>
         </div>
-        <div className="form-control">
-          <label htmlFor="photo">Photo URL</label>
-          <input type="text" name="photo" placeholder="Photo URL" required />
-        </div>
-        <div className="form-control">
-          <label htmlFor="email">Email address</label>
-          <input type="email" name="email" placeholder="Enter email" required />
-        </div>
-        <div className="form-control">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            required
-          />
-        </div>
-        <div className="form-control">
-          <label htmlFor="password">Confirm your Password</label>
-          <input
-            type="password"
-            name="confirm"
-            placeholder="confirm your Password"
-            required
-          />
-        </div>
-        <p className="text-red-500">
-          <small>{error}</small>
-        </p>
+        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <form onSubmit={handleRegister} className="card-body">
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Name</span>
+              </label>
+              <input
+                type="text"
+                name="name"
+                placeholder="name"
+                className="input input-bordered"
+                required
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Your Photo</span>
+              </label>
+              <input
+                type="url"
+                name="photoURL"
+                placeholder="Your photo"
+                className="input input-bordered"
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Email</span>
+              </label>
+              <input
+                type="email"
+                name="email"
+                placeholder="Your email"
+                className="input input-bordered"
+                required
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Password</span>
+              </label>
+              <div className="flex ">
+                <div>
+                  {" "}
+                  <input
+                    placeholder="Your password"
+                    className="input input-bordered"
+                    type={show ? "text" : "password"}
+                    name="password"
+                    id=""
+                    required
+                  />
+                </div>
+                <div>
+                  <p onClick={() => setSHow(!show)}>
+                    <small>
+                      {show ? (
+                        <span>Hide Password </span>
+                      ) : (
+                        <span>Show Password </span>
+                      )}
+                    </small>
+                  </p>
+                </div>
+              </div>
 
-        <button
-          className="btn btn-active border-0 text-white font-semibold bg-indigo-500"
-          type="submit"
-        >
-          Register
-        </button>
-        <br />
-        <Form.Text className="text-indigo-500">
-          Already Have an Account? <Link to="/login">Please Login</Link>
-        </Form.Text>
-        <Form.Text className="text-success"></Form.Text>
-        <Form.Text className="text-danger"></Form.Text>
-      </Form>
-    </Container>
+              <br />
+              <p className="text-red-600 text-xl font-semibold">{error}</p>
+              <p className="text-green-600 text-xl font-semibold">{success}</p>
+              <label className="label">
+                <Link to="/login" className="label-text-alt link link-hover">
+                  Already have an account?
+                  <span className="text-indigo-800 font-semibold">Please Login</span>
+                </Link>
+              </label>
+            </div>
+            <div className="form-control mt-6">
+              <button className="btn btn-primary">Register</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   );
 };
 

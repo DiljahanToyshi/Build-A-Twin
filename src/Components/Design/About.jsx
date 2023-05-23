@@ -6,7 +6,7 @@ import img5 from "../../assets/h5.avif";
 const About = () => {
   return (
     <div className="my-12">
-      <p className="m-8 text-5xl font-serif text-center text-indigo-600">
+      <p className="m-8 text-5xl font-serif text-center text-indigo-600" data-aos="fade-up" data-aos-easing='ease-out-cubic' data-aos-duration="1500">
         France’s No.1 Toy Brand
       </p>
       <div className="md:flex justify-between gap-4 mx-3 ">
