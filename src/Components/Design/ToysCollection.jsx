@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useEffect, useState } from "react";
 import Toys from "../Toys";
 // eslint-disable-next-line react-hooks/rules-of-hooks
