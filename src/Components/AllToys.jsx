@@ -13,6 +13,7 @@ const AllToys = () => {
 
   
   // eslint-disable-next-line react-hooks/rules-of-hooks
+ 
   useEffect(() => {
     fetch(
       `https://assignment-11-server-phi-liard.vercel.app/toys/${activeTab} `

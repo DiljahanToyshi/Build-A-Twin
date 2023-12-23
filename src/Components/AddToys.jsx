@@ -4,11 +4,13 @@ import { useForm } from "react-hook-form";
 
 import { AuthContext } from "../providers/Authprovider";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const AddToys = () => {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
+
   //  const [selectedOption, setSelectedOption] = useState(null);
 
   const {
@@ -27,7 +29,7 @@ const AddToys = () => {
       .then((result) => {
         if (result.insertedId) {
           Swal.fire("Add a toy successfully");
-          navigate("/allToys")
+          navigate("/allToys", { state: { from: location } })
         }
       });
   };
