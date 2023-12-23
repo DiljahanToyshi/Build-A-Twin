@@ -17,7 +17,7 @@ const Toys = ({ toy }) => {
 
   return (
     <>
-      <div className="bg-gray-100 p-6 rounded shadow-lg">
+      <div className="bg-gray-100 p-6 rounded shadow-lg ">
         <img
           className=" w-full h-56 mb-6 rounded shadow-lg md:h-64 xl:h-80"
           src={picture}
@@ -26,9 +26,9 @@ const Toys = ({ toy }) => {
         <p className="mb-2 text-xl font-bold leading-none sm:text-2xl">
           {toyName}
         </p>
-        <p className="text-gray-700 ">Category: {subCategory}</p>
-        <p className="text-gray-700 ">Rating : {rating}</p>
-        <p className="text-gray-700 font-bold">Price: {price}$</p>
+        <p className="text-gray-700 "><span className="font-bold">Category:</span> {subCategory}</p>
+        <p className="text-gray-700 "><span className="font-bold">Rating :</span> {rating}</p>
+        <p className="text-gray-700"><span className="font-bold">Price:</span> {price}$</p>
 
         <Link to={`/toys/${_id}`}>
           {" "}

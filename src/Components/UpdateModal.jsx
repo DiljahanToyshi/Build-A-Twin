@@ -123,7 +123,7 @@ const UpdateModal = (props) => {
                 defaultValue={user?.email}
                 {...register("sellerEmail")}
                 placeholder="your email"
-                type="email"
+                type="email" readOnly
               />
             </div>
             <div className="my-4">

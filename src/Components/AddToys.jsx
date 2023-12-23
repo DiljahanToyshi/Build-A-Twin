@@ -34,26 +34,26 @@ const AddToys = () => {
 
   //   console.log(user);
   return (
-    <div className="add-job-container">
+    <div className="">
       <h1 className="sm:text-2xl md:text-4xl font-bold text-indigo-600 text-center">Add your Toy's Collection</h1>
 
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="md:flex gap-14 justify-center mt-4 md:mt-8">
+        <div className="text-center md:flex gap-14 justify-center mt-4 md:mt-8">
           {errors.exampleRequired && <span>This field is required</span>}
           <div>
             {" "}
             <div>
               {" "}
-              <label htmlFor="toyName">Toy Name</label> <br />
+              <label  htmlFor="Toy Name" className="text-xl font-normal mb-1">Toy Name</label> <br />
               <input
                 className="text-input p-2 rounded-sm"
                 {...register("Toy Name")}
-                placeholder="toyName"
+                placeholder="Toy Name"
               />
             </div>
             <div className="my-4">
               {" "}
-              <label htmlFor="sellerName">sellerName</label> <br />
+              <label className="text-xl font-normal mb-1" htmlFor="Seller Name">Seller Name</label> <br />
               <input
                 className="text-input p-2 rounded-sm"
                 {...register("sellerName", { required: true })}
@@ -61,17 +61,17 @@ const AddToys = () => {
               />
             </div>
             <div>
-              <label htmlFor="Quantity">Quantity</label> <br />
+              <label className="text-xl font-normal mb-1" htmlFor="Quantity">Quantity</label> <br />
               <input
                 className="text-input p-2 rounded-sm"
-                {...register("availableQuantity", { required: true })}
-                placeholder="availableQuantity"
+                {...register("Available Quantity", { required: true })}
+                placeholder="AvailableQuantity"
                 type="number"
               />
             </div>
             <div className="my-4">
               {" "}
-              <label htmlFor="Category">Category</label> <br />
+              <label className="text-xl font-normal mb-1" htmlFor="Category">Category</label> <br />
               <select className="text-input p-2 rounded-sm" {...register("subCategory")}>
                 <option value="Disney Princess">Disney Princess</option>
                 <option value="Frozen Dolls">Frozen Dolls</option>
@@ -85,7 +85,7 @@ const AddToys = () => {
             {" "}
             <div>
               {" "}
-              <label htmlFor="Picture">Picture</label> <br />
+              <label className="text-xl font-normal mb-1" htmlFor="Picture">Picture</label> <br />
               <input
                 className="text-input p-2 rounded-sm"
                 {...register("picture")}
@@ -95,7 +95,7 @@ const AddToys = () => {
             </div>
             <div className="my-4">
               {" "}
-              <label htmlFor="Price">Price</label> <br />
+              <label className="text-xl font-normal mb-1" htmlFor="Price">Price</label> <br />
               <input
                 className="text-input p-2 rounded-sm"
                 {...register("price")}
@@ -105,17 +105,16 @@ const AddToys = () => {
             </div>
             <div>
               {" "}
-              <label htmlFor="Email">Email</label> <br />
+              <label className="text-xl font-normal mb-1" htmlFor="Email">Email</label> <br />
               <input
                 className="text-input p-2 rounded-sm"
                 defaultValue={user?.email}
                 {...register("sellerEmail")}
-                placeholder="your email"
-                type="email"
+                type="email" readOnly
               />
             </div>
             <div className="my-4">
-              <label htmlFor="Description">Description</label> <br />
+              <label className="text-xl font-normal mb-1" htmlFor="Description">Description</label> <br />
               <input
                 className="text-input p-2 rounded-sm"
                 {...register("description")}

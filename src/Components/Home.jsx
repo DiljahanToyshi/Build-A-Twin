@@ -15,23 +15,23 @@ const Home = () => {
           <div id="slide1" className="carousel-item relative w-full">
             <img src={img4} className="w-full rounded-md " />
 
-            <div className="absolute flex sm:justify-between  gap-3  left-5 right-5 bottom-48 mr-16 text-white ">
-              <div className="  md:ml-8  space-y-7 w-1/3 ">
-                <h2 className="text-5xl  font-semibold bg-clip-text">
+            <div className="absolute flex sm:justify-between gap-3 md:left-5 right-5 md:bottom-40 md:mr-16 text-white ">
+              <div className="mt-24 lg:mt-0 ml-4 md:ml-8  space-y-7 w-1/2 lg:w-1/3 ">
+                <h2 className="text-2xl md:text-5xl  font-semibold bg-clip-text">
                   {" "}
                   Make your Twin WITH US{" "}
                 </h2>
-                <p className="font-semibold">
+                <p className="font-bold text-lg text-white">
                   Buy all kinds of intellectual games, toys, puzzles in our
                   online store and give your child the pleasure of love &
                   entertainment.{" "}
                 </p>
-                <button className="btn  btn-secondary border-0 font-semibold bg-indigo-500">
+                <button className="btn border-0 font-semibold bg-indigo-400 hover:bg-indigo-500">
                   {" "}
                   order now{" "}
                 </button>
               </div>
-              <div className="flex gap-5 md:mt-64">
+              <div className="flex gap-5 mt-96 -mb-20 items-end">
                 <a
                   href="#slide5"
                   className="btn btn-circle border-indigo-700 bg-indigo-200 "
@@ -52,23 +52,24 @@ const Home = () => {
               src={img2}
               className="w-full rounded-md "
             />
-            <div className="absolute flex sm:justify-between  gap-3  left-5 right-5 bottom-48 mr-16 text-white ">
-              <div className="  md:ml-8 space-y-7 w-1/3">
-                <h2 className="text-5xl font-semibold">
+           
+           <div className="absolute flex sm:justify-between gap-3 md:left-5 right-5 md:bottom-40 md:mr-16 text-white ">
+              <div className="mt-24 lg:mt-0 ml-4 md:ml-8  space-y-7 w-1/2 lg:w-1/3 ">
+                <h2 className="text-2xl md:text-5xl  font-semibold bg-clip-text">
                   {" "}
                   Make your Twin WITH US{" "}
                 </h2>
-                <p className="font-semibold">
+                <p className="font-bold text-lg text-white">
                   Buy all kinds of intellectual games, toys, puzzles in our
                   online store and give your child the pleasure of love &
                   entertainment.{" "}
                 </p>
-                <button className="btn  btn-secondary border-0 font-semibold bg-indigo-500">
+                <button className="btn border-0 font-semibold bg-indigo-400 hover:bg-indigo-500">
                   {" "}
                   order now{" "}
                 </button>
               </div>
-              <div className="flex gap-5 md:mt-64">
+              <div className="flex gap-5 mt-96 -mb-20 items-end">
                 <a
                   href="#slide1"
                   className="btn btn-circle  border-indigo-700 bg-indigo-200"
@@ -87,23 +88,24 @@ const Home = () => {
 
           <div id="slide3" className="carousel-item relative w-full">
             <img src={img3} className="w-full rounded-md " />
-            <div className="absolute flex sm:justify-between  gap-3  left-5 right-5 bottom-48 mr-16 text-white ">
-              <div className="  md:ml-8 space-y-7 w-1/3">
-                <h2 className="text-5xl font-semibold">
+          
+            <div className="absolute flex sm:justify-between gap-3 md:left-5 right-5 md:bottom-40 md:mr-16 text-white ">
+              <div className="mt-24 lg:mt-0 ml-4 md:ml-8  space-y-7 w-1/2 lg:w-1/3 ">
+                <h2 className="text-2xl md:text-5xl  font-semibold bg-clip-text">
                   {" "}
                   Make your Twin WITH US{" "}
                 </h2>
-                <p className="font-semibold">
+                <p className="font-bold text-lg text-white">
                   Buy all kinds of intellectual games, toys, puzzles in our
                   online store and give your child the pleasure of love &
                   entertainment.{" "}
                 </p>
-                <button className="btn  btn-secondary border-0 font-semibold bg-indigo-500">
+                <button className="btn border-0 font-semibold bg-indigo-400 hover:bg-indigo-500">
                   {" "}
                   order now{" "}
                 </button>
               </div>
-              <div className="flex gap-5 md:mt-64">
+              <div className="flex gap-5 mt-96 -mb-20 items-end">
                 <a
                   href="#slide2"
                   className="btn btn-circle  border-indigo-700 bg-indigo-200"
@@ -121,23 +123,24 @@ const Home = () => {
           </div>
           <div id="slide4" className="carousel-item relative w-full">
             <img src={img5} className="w-full rounded-md " />
-            <div className="absolute flex sm:justify-between  gap-3  left-5 right-5 bottom-48 mr-16 text-white ">
-              <div className="  md:ml-8 space-y-7 w-1/3">
-                <h2 className="text-5xl font-semibold">
+           
+            <div className="absolute flex sm:justify-between gap-3 md:left-5 right-5 md:bottom-40 md:mr-16 text-white ">
+              <div className="mt-24 lg:mt-0 ml-4 md:ml-8  space-y-7 w-1/2 lg:w-1/3 ">
+                <h2 className="text-2xl md:text-5xl  font-semibold bg-clip-text">
                   {" "}
                   Make your Twin WITH US{" "}
                 </h2>
-                <p className="font-semibold">
+                <p className="font-bold text-lg text-white">
                   Buy all kinds of intellectual games, toys, puzzles in our
                   online store and give your child the pleasure of love &
                   entertainment.{" "}
                 </p>
-                <button className="btn  btn-secondary border-0 font-semibold bg-indigo-500">
+                <button className="btn border-0 font-semibold bg-indigo-400 hover:bg-indigo-500">
                   {" "}
                   order now{" "}
                 </button>
               </div>
-              <div className="flex gap-5 md:mt-64">
+              <div className="flex gap-5 mt-96 -mb-20 items-end">
                 <a
                   href="#slide3"
                   className="btn btn-circle  border-indigo-700 bg-indigo-200"
@@ -155,23 +158,24 @@ const Home = () => {
           </div>
           <div id="slide5" className="carousel-item relative w-full">
             <img src={img1} className="w-full rounded-md " />
-            <div className="absolute flex sm:justify-between  gap-3  left-5 right-5 bottom-48 mr-16 text-white ">
-              <div className="  md:ml-8 space-y-7 w-1/3">
-                <h2 className="text-5xl font-semibold">
+          
+            <div className="absolute flex sm:justify-between gap-3 md:left-5 right-5 md:bottom-40 md:mr-16 text-white ">
+              <div className="mt-24 lg:mt-0 ml-4 md:ml-8  space-y-7 w-1/2 lg:w-1/3 ">
+                <h2 className="text-2xl md:text-5xl  font-semibold bg-clip-text">
                   {" "}
                   Make your Twin WITH US{" "}
                 </h2>
-                <p className="font-semibold">
+                <p className="font-bold text-lg text-white">
                   Buy all kinds of intellectual games, toys, puzzles in our
                   online store and give your child the pleasure of love &
                   entertainment.{" "}
                 </p>
-                <button className="btn  btn-secondary border-0 font-semibold bg-indigo-500 hover:bg-indigo-600">
+                <button className="btn border-0 font-semibold bg-indigo-400 hover:bg-indigo-500">
                   {" "}
                   order now{" "}
                 </button>
               </div>
-              <div className="flex gap-5 md:mt-64">
+              <div className="flex gap-5 mt-96 -mb-20 items-end">
                 <a
                   href="#slide4"
                   className="btn btn-circle  border-indigo-700 bg-indigo-200"
@@ -188,9 +192,9 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <ToysCollection></ToysCollection>
+        {/* <ToysCollection></ToysCollection>
         <About></About>
-       <Service></Service>
+       <Service></Service> */}
       </div>
     );
 };
