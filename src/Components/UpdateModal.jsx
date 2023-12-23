@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 
 import { AuthContext } from "../providers/Authprovider";
 import Swal from "sweetalert2";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 
 const UpdateModal = (props) => {
   const { user } = useContext(AuthContext);
@@ -25,6 +25,7 @@ const UpdateModal = (props) => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const navigate = useNavigate()
   const onSubmit = (data) => {
 
     fetch(`https://assignment-11-server-phi-liard.vercel.app/update/${_id}`, {
@@ -35,7 +36,8 @@ const UpdateModal = (props) => {
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {
-          Swal.fire("Add a toy successfully");
+          Swal.fire("Update your toy successfully");
+          navigate('/myToys')
         }
       });
   };
@@ -132,6 +134,7 @@ const UpdateModal = (props) => {
                 className="text-input"
                 {...register("description")}
                 placeholder={description}
+                defaultValue={description}
               />
             </div>
           </div>
@@ -139,7 +142,7 @@ const UpdateModal = (props) => {
         <div className="text-center">
           <input
             className=" btn submit-btn rounded-md p-3 border-2 border-indigo-500  bg-indigo-500 text-white  font-semibold md:ml-96"
-            value="Add a toy"
+            value="Update toy"
             type="submit"
           />
         </div>
