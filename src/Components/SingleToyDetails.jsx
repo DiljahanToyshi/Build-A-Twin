@@ -10,7 +10,7 @@ const SingleToyDetails = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const toy = useLoaderData();
   const {
-    _id,
+  
     availableQuantity,
     sellerName,
     description,
@@ -19,14 +19,7 @@ const SingleToyDetails = () => {
     rating,
     toyName,
   } = toy;
-  // useEffect(() => {
-  //   fetch(
-  //     `https://assignment-11-server-phi-liard.vercel.app/toys/${_id}`)
-  //     .then(response => response.json())
-  //     .then((data) =>console.log(data))
-  // },[]);
 
-  console.log(toy);
   return (
     <div className="my-container">
       {/* Container Box */}
@@ -65,13 +58,13 @@ const SingleToyDetails = () => {
               {availableQuantity}
             </p>
 
-            <p className="items-center font-extrabold text-gray-600 ">
-              <span className="font-bold text-indigo-800">Price:</span> {price}
+            <p className="items-center font-medium text-gray-600 ">
+              <span className="font-bold text-indigo-800">Price:</span> {price} $
             </p>
           </div>
           <button
-            className="btn btn-active border-0 text-white font-semibold mt-4 bg-indigo-500"
-            type="submit"
+            className="btn btn-active border-0 text-white font-semibold mt-4 bg-indigo-500 hover:bg-indigo-600"
+            
           >
             Buy Now
           </button>

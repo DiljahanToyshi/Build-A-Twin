@@ -4,7 +4,7 @@ const Blog = () => {
     <div>
       <div className="collapse">
         <input type="checkbox" className="peer" />
-        <div className="collapse-title bg-indigo-600 text-primary-content peer-checked:bg-indigo-800 peer-checked:text-indigo-600">
+        <div className="collapse-title bg-indigo-600 text-primary-content peer-checked:bg-indigo-800 peer-checked:text-secondary-content">
           What is an access token and refresh token? How do they work and where
           should we store them on the client-side?{" "}
         </div>

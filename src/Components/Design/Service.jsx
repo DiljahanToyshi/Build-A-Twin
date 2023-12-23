@@ -1,8 +1,10 @@
 
 const Service = () => {
   return (
-    <div className="my-16">
-      <p className="mt-8 text-5xl font-serif text-center text-indigo-600">
+    <div className="my-16 lg:my-16">
+      <p className="animate-text my-5 md:my-12 bg-gradient-to-r from-teal-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent text-5xl font-black text-center"
+        data-aos-easing="ease-out-cubic"
+        >
         Our Service
       </p>
       <footer

@@ -124,7 +124,7 @@ const Header = () => {
             <Bars3BottomRightIcon className="w-5 text-gray-600" />
           </button>
           {isMenuOpen && (
-            <div className="absolute top-0 left-0 w-full z-10">
+            <div className="absolute top-0 left-0 w-full z-20">
               <div className="p-5 bg-white border rounded shadow-sm">
                 {/* Logo & Button section */}
                 <div className="flex items-center justify-between mb-4">
@@ -152,7 +152,7 @@ const Header = () => {
                 <nav>
                   <ul className="space-y-4">
                     <li>
-                      <Link to="/" className="default">
+                      <Link to="/" className="font-medium tracking-wide text-gray-700 ">
                         Home
                       </Link>
                     </li>
@@ -163,7 +163,7 @@ const Header = () => {
                         className={({ isActive }) =>
                           isActive
                             ? "text-blue-700 text-xl font-semibold"
-                            : "default"
+                            : "default font-medium tracking-wide text-gray-700"
                         }
                       >
                         Blogs

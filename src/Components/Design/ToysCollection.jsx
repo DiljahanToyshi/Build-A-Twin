@@ -18,7 +18,7 @@ const ToysCollection = () => {
   return (
     <div>
       <h2
-        className="animate-text my-5 bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent text-5xl font-black text-center"
+        className="animate-text my-5 md:my-12 bg-gradient-to-r from-cyan-500 via-purple-500 to-blue-500 bg-clip-text text-transparent text-5xl font-black text-center"
         data-aos="fade-up"
         data-aos-easing="ease-out-cubic"
         data-aos-duration="1500"

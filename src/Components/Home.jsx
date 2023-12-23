@@ -166,7 +166,7 @@ const Home = () => {
                   online store and give your child the pleasure of love &
                   entertainment.{" "}
                 </p>
-                <button className="btn  btn-secondary border-0 font-semibold bg-indigo-500">
+                <button className="btn  btn-secondary border-0 font-semibold bg-indigo-500 hover:bg-indigo-600">
                   {" "}
                   order now{" "}
                 </button>

@@ -32,7 +32,7 @@ const Toys = ({ toy }) => {
 
         <Link to={`/toys/${_id}`}>
           {" "}
-          <button className="btn  btn-secondary block border-0 font-semibold bg-indigo-500">
+          <button className="btn  block border-0 font-semibold bg-indigo-500 hover:bg-indigo-600 ">
             {" "}
             view details
           </button>

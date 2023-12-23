@@ -74,9 +74,9 @@ const AllToys = () => {
         <span className="text-2xl font-semibold text-indigo-600">
           Category By :{" "}
         </span>
-        <div
+        <button
           onClick={() => handleCategory("Princess")}
-          className={`btn  text-indigo-700 border-0 font-semibold ${
+          className={` p-3 rounded-md text-indigo-700 border-0 font-semibold hover:text-white hover:bg-indigo-500 transition duration-300 ${
             activeTab == "Princess"
               ? "bg-indigo-500  text-white"
               : "bg-white"
@@ -84,10 +84,10 @@ const AllToys = () => {
           type="submit"
         >
           Disney Princess
-        </div>
+        </button>
         <div
           onClick={() => handleCategory("Dolls")}
-          className={`btn  btn-active border-0 mx-3 font-semibold ${
+          className={`btn  btn-active border-0 mx-3 font-semibold hover:text-white hover:bg-indigo-500 transition duration-300 ${
             activeTab == "Dolls"
               ? "bg-indigo-500  text-white"
               : "bg-white text-indigo-700"
@@ -98,7 +98,7 @@ const AllToys = () => {
         </div>
         <div
           onClick={() => handleCategory("Characters")}
-          className={`btn  btn-active border-0 font-semibold ${
+          className={`btn  btn-active border-0 font-semibold hover:text-white hover:bg-indigo-500 transition duration-300 ${
             activeTab == "Characters"
               ? "bg-indigo-500  text-white"
               : "bg-white text-indigo-700"
@@ -109,7 +109,7 @@ const AllToys = () => {
         </div>
         <div
           onClick={() => handleCategory("all")}
-          className={`btn ml-3 text-indigo-700 border-0 font-semibold ${
+          className={`btn ml-3 text-indigo-700 border-0 font-semibold hover:text-white hover:bg-indigo-500 transition duration-300 ${
             activeTab == "princess" ? "bg-indigo-500  text-white" : "bg-white"
           }`}
           type="submit"
