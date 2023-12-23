@@ -8,10 +8,10 @@ const AllToys = () => {
   const [toys, setToys] = useState([]);
   const navigation = useNavigation();
   const [activeTab, setActiveTab] = useState("");
-  const [searchText, setsearchText] = useState("");
-  if (navigation.state === "loading") {
-    return <LoadingSpinner />;
-  }
+  const [searchText, setSearchText] = useState("");
+  const [searchTimeout, setSearchTimeout] = useState(null);
+
+  
   // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     fetch(
@@ -36,6 +36,29 @@ const AllToys = () => {
    
   };
 
+  const delayedSearch = (text) => {
+    if (searchTimeout) {
+      clearTimeout(searchTimeout);
+    }
+
+    setSearchTimeout(
+      setTimeout(() => {
+        handleSearch(text);
+      }, 500) // Adjust the delay time (in milliseconds) as needed
+    );
+  };
+
+  const handleInputChange = (e) => {
+    const searchText = e.target.value;
+    setSearchText(searchText);
+    delayedSearch(searchText);
+    e.preventDefault();
+
+  };
+  if (navigation.state === "loading") {
+    return <LoadingSpinner />;
+  }
+
   return (
     <div>
       <Helmet>
@@ -45,14 +68,14 @@ const AllToys = () => {
   <div className="input-group m-4 sm:w-full md:w-3/4 lg:w-1/2 xl:w-1/3 mx-auto">
     <input
       id="search"
-      onChange={(e) => setsearchText(e.target.value)}
+      onChange={handleInputChange}
       type="text"
       placeholder="Search…"
       className="input input-bordered w-full"
     />
     <button
       onClick={handleSearch}
-      className="btn btn-square bg-indigo-600 mr-5 md:mr-14 "
+      className="btn btn-square bg-indigo-600 hover:bg-indigo-700 mr-5 md:mr-14 "
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

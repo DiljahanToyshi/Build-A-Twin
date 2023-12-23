@@ -16,8 +16,8 @@ const Home = () => {
             <img src={img4} className="w-full rounded-md " />
 
             <div className="absolute flex sm:justify-between gap-3 md:left-5 right-5 md:bottom-40 md:mr-16 text-white ">
-              <div className="mt-24 lg:mt-0 ml-4 md:ml-8  space-y-7 w-1/2 lg:w-1/3 ">
-                <h2 className="text-2xl md:text-5xl  font-semibold bg-clip-text">
+              <div className="mt-24 lg:mt-0 ml-4 md:ml-8  space-y-7 w-3/2 lg:w-1/3 ">
+                <h2 className="text-3xl md:text-5xl  font-semibold bg-clip-text">
                   {" "}
                   Make your Twin WITH US{" "}
                 </h2>
@@ -54,8 +54,8 @@ const Home = () => {
             />
            
            <div className="absolute flex sm:justify-between gap-3 md:left-5 right-5 md:bottom-40 md:mr-16 text-white ">
-              <div className="mt-24 lg:mt-0 ml-4 md:ml-8  space-y-7 w-1/2 lg:w-1/3 ">
-                <h2 className="text-2xl md:text-5xl  font-semibold bg-clip-text">
+              <div className="mt-24 lg:mt-0 ml-4 md:ml-8  space-y-7 w-3/2 lg:w-1/3 ">
+                <h2 className="text-3xl md:text-5xl  font-semibold bg-clip-text">
                   {" "}
                   Make your Twin WITH US{" "}
                 </h2>
@@ -90,8 +90,8 @@ const Home = () => {
             <img src={img3} className="w-full rounded-md " />
           
             <div className="absolute flex sm:justify-between gap-3 md:left-5 right-5 md:bottom-40 md:mr-16 text-white ">
-              <div className="mt-24 lg:mt-0 ml-4 md:ml-8  space-y-7 w-1/2 lg:w-1/3 ">
-                <h2 className="text-2xl md:text-5xl  font-semibold bg-clip-text">
+              <div className="mt-24 lg:mt-0 ml-4 md:ml-8  space-y-7 w-3/2 lg:w-1/3 ">
+                <h2 className="text-3xl md:text-5xl  font-semibold bg-clip-text">
                   {" "}
                   Make your Twin WITH US{" "}
                 </h2>
@@ -125,8 +125,8 @@ const Home = () => {
             <img src={img5} className="w-full rounded-md " />
            
             <div className="absolute flex sm:justify-between gap-3 md:left-5 right-5 md:bottom-40 md:mr-16 text-white ">
-              <div className="mt-24 lg:mt-0 ml-4 md:ml-8  space-y-7 w-1/2 lg:w-1/3 ">
-                <h2 className="text-2xl md:text-5xl  font-semibold bg-clip-text">
+              <div className="mt-24 lg:mt-0 ml-4 md:ml-8  space-y-7 w-3/2 lg:w-1/3 ">
+                <h2 className="text-3xl md:text-5xl  font-semibold bg-clip-text">
                   {" "}
                   Make your Twin WITH US{" "}
                 </h2>
@@ -160,8 +160,8 @@ const Home = () => {
             <img src={img1} className="w-full rounded-md " />
           
             <div className="absolute flex sm:justify-between gap-3 md:left-5 right-5 md:bottom-40 md:mr-16 text-white ">
-              <div className="mt-24 lg:mt-0 ml-4 md:ml-8  space-y-7 w-1/2 lg:w-1/3 ">
-                <h2 className="text-2xl md:text-5xl  font-semibold bg-clip-text">
+              <div className="mt-24 lg:mt-0 ml-4 md:ml-8  space-y-7 w-3/2 lg:w-1/3 ">
+                <h2 className="text-3xl md:text-5xl  font-semibold bg-clip-text">
                   {" "}
                   Make your Twin WITH US{" "}
                 </h2>
@@ -192,9 +192,9 @@ const Home = () => {
             </div>
           </div>
         </div>
-        {/* <ToysCollection></ToysCollection>
+        <ToysCollection></ToysCollection>
         <About></About>
-       <Service></Service> */}
+       <Service></Service>
       </div>
     );
 };

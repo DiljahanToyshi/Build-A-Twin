@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.title-text{
+    @apply animate-text my-5 md:my-12 bg-gradient-to-r from-cyan-500 via-purple-500 to-blue-500 bg-clip-text text-transparent text-2xl md:text-4xl lg:text-5xl font-black text-center
+}

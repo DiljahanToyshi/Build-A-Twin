@@ -18,14 +18,14 @@ const ToysCollection = () => {
   return (
     <div>
       <h2
-        className="animate-text my-5 md:my-12 bg-gradient-to-r from-cyan-500 via-purple-500 to-blue-500 bg-clip-text text-transparent text-5xl font-black text-center"
+        className="title-text"
         data-aos="fade-up"
         data-aos-easing="ease-out-cubic"
         data-aos-duration="1500"
       >
         Build A Twin's toy collection
       </h2>
-      <div className="grid gap-8 lg:grid-cols-3">
+      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {
           // eslint-disable-next-line react/jsx-key
           toys.slice(0, showAll ? 12 : 6).map((toy) => (

@@ -7,14 +7,14 @@ const About = () => {
   return (
     <div className="md:my-12 lg:my-16">
       <p
-     className="animate-text my-5 md:my-12 bg-gradient-to-r from-teal-500 via-purple-500 to-blue-500 bg-clip-text text-transparent text-5xl font-black text-center"
+     className="title-text"
      data-aos="fade-up"
      data-aos-easing="ease-out-cubic"
      data-aos-duration="1500"
       >
         France’s No.1 Toy Brand
       </p>
-      <div className="md:flex justify-between gap-4 mx-3 ">
+      <div className="grid gap-2 grid-cols-3 md:grid-cols-5 ">
         <img className="h-32 rounded-xl " src={img1} alt="" />
         <img className="h-32 rounded-xl " src={img2} alt="" />
         <img className="h-32 rounded-xl " src={img3} alt="" />
