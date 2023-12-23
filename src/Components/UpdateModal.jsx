@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 
 import { AuthContext } from "../providers/Authprovider";
 import Swal from "sweetalert2";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 
 const UpdateModal = (props) => {
   const { user } = useContext(AuthContext);
@@ -26,7 +26,6 @@ const UpdateModal = (props) => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    console.log(props);
 
     fetch(`https://assignment-11-server-phi-liard.vercel.app/update/${_id}`, {
       method: "PUT",
@@ -35,17 +34,15 @@ const UpdateModal = (props) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.modifiedCount > 0) {
           Swal.fire("Add a toy successfully");
         }
       });
   };
 
-  console.log(_id);
   return (
     <div className="add-job-container">
-      <p className="m-4 text-4xl md:text-center font-semibold text-white">
+      <p className="sm:text-2xl md:text-4xl font-bold text-indigo-600 text-center my-3 md:my-6">
         Update your toy!!
       </p>
       <form onSubmit={handleSubmit(onSubmit)}>

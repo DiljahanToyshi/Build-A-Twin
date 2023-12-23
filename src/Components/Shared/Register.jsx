@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   createUserWithEmailAndPassword,
   getAuth,
@@ -11,7 +11,9 @@ import app from "../../firebase/firebase.config";
 const auth = getAuth(app);
 const Register = () => {
   const [show, setSHow] = useState(false);
-
+  const navigate = useNavigate();
+const location = useLocation();
+const from = location.state?.from?.pathname || "/";
   const { user, createUser, setUser } = useContext(AuthContext);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
@@ -40,6 +42,7 @@ const Register = () => {
         setError("");
         event.target.reset();
         setSuccess("User has been created successfully");
+navigate(from,{replace:true});
         updateUserData(result.user, name);
       })
       .catch((error) => {

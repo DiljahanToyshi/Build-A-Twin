@@ -30,7 +30,6 @@ const Login = () => {
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
     setError("");
     setSuccess("");
 
@@ -57,7 +56,6 @@ const Login = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((result) => {
         const loggedUser = result.user;
-        console.log(loggedUser);
         if (!loggedUser.emailVerified) {
           setSuccess("User login successful.");
           setError("");

@@ -1,5 +1,6 @@
-import { useLoaderData,  useNavigation } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
 import LoadingSpinner from "./LoadingSpinner";
+import { useEffect } from "react";
 
 const SingleToyDetails = () => {
   const navigation = useNavigation();
@@ -8,9 +9,24 @@ const SingleToyDetails = () => {
   }
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const toy = useLoaderData();
-const {availableQuantity,sellerName, description, price, picture,rating, toyName,
-} = toy;
+  const {
+    _id,
+    availableQuantity,
+    sellerName,
+    description,
+    price,
+    picture,
+    rating,
+    toyName,
+  } = toy;
+  // useEffect(() => {
+  //   fetch(
+  //     `https://assignment-11-server-phi-liard.vercel.app/toys/${_id}`)
+  //     .then(response => response.json())
+  //     .then((data) =>console.log(data))
+  // },[]);
 
+  console.log(toy);
   return (
     <div className="my-container">
       {/* Container Box */}
@@ -31,24 +47,34 @@ const {availableQuantity,sellerName, description, price, picture,rating, toyName
           <h5 className="mb-3 text-3xl font-extrabold leading-none sm:text-4xl">
             {toyName}
           </h5>
-          <p className=" text-gray-900">
-            Description: {description}
+          <p className=" text-gray-900 font-medium">
+            <span className="font-bold text-indigo-800">Description:</span>{" "}
+            {description}
           </p>
-          <p className=" text-gray-900">SellerName: {sellerName}</p>
-          <p className=" text-gray-900">Quantity: {availableQuantity}</p>
-          <p className="mb-5 text-gray-900">Rating: {rating}</p>
+          <p className=" text-gray-900 font-medium">
+            <span className="font-bold text-indigo-800">SellerName:</span>{" "}
+            {sellerName}
+          </p>
+          <p className=" text-gray-900 font-medium">
+            <span className="font-bold text-indigo-800">Rating: </span> {rating}
+          </p>
 
-          <div className="flex gap-5 mt-8 items-center">
-            <button
-              className="btn btn-active border-0 text-white font-semibold bg-indigo-500"
-              type="submit"
-            >
-              Buy Now
-            </button>
+          <div className="flex gap-5  items-center">
+            <p className=" text-gray-900 font-medium">
+              <span className="font-bold text-indigo-800">Quantity:</span>{" "}
+              {availableQuantity}
+            </p>
+
             <p className="items-center font-extrabold text-gray-600 ">
-              Price: {price}
+              <span className="font-bold text-indigo-800">Price:</span> {price}
             </p>
           </div>
+          <button
+            className="btn btn-active border-0 text-white font-semibold mt-4 bg-indigo-500"
+            type="submit"
+          >
+            Buy Now
+          </button>
         </div>
       </div>
     </div>

@@ -31,7 +31,6 @@ const MyToys = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
           if (data.deletedCount > 0) {
             Swal.fire("deleted successful");
             const remaining = toys.filter((toy) => toy._id !== id);

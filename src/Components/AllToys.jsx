@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 import Toys from "./Toys";
 import { useNavigation } from "react-router-dom";
 import LoadingSpinner from "./LoadingSpinner";
+import { Helmet } from 'react-helmet-async';
 
 const AllToys = () => {
   const [toys, setToys] = useState([]);
   const navigation = useNavigation();
-  const [activeTab, setActiveTab] = useState(" ");
+  const [activeTab, setActiveTab] = useState("");
   const [searchText, setsearchText] = useState("");
   if (navigation.state === "loading") {
     return <LoadingSpinner />;
@@ -37,6 +38,9 @@ const AllToys = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>All Toys</title>
+      </Helmet>
       <div className="form-control">
         <div className="input-group m-4 md:ml-96">
           <input id="search"

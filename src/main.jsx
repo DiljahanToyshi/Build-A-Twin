@@ -9,17 +9,18 @@ import MyToys from "./Components/MyToys";
 import Register from "./Components/Shared/Register";
 import AuthProvider from "./providers/Authprovider";
 import PrivateRoute from "./privateRoute/PrivateRoute";
-import ErrorPage from "./Components/ErrorPage";
+// import ErrorPage from "./Components/ErrorPage";
 import SingleToyDetails from "./Components/SingleToyDetails";
 import AddToys from "./Components/AddToys";
 import Blog from "./Components/Blog";
 import UpdateModal from "./Components/UpdateModal";
+import {  HelmetProvider } from 'react-helmet-async';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
-    errorElement: <ErrorPage></ErrorPage>,
+    // errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -66,7 +67,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://assignment-11-server-phi-liard.vercel.app/toys/${params.id}`
+            `https://assignment-11-server-phi-liard.vercel.app/update/${params.id}`
           ),
       },
 
@@ -84,6 +85,9 @@ const router = createBrowserRouter([
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <AuthProvider>
+    <HelmetProvider>
     <RouterProvider router={router}></RouterProvider>
+
+      </HelmetProvider> 
   </AuthProvider>
 );

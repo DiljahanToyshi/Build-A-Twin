@@ -18,8 +18,6 @@ const AddToys = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
-
     fetch("https://assignment-11-server-phi-liard.vercel.app/addToys", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -27,9 +25,9 @@ const AddToys = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
         if (result.insertedId) {
           Swal.fire("Add a toy successfully");
+          navigate("/allToys")
         }
       });
   };
@@ -37,37 +35,35 @@ const AddToys = () => {
   //   console.log(user);
   return (
     <div className="add-job-container">
-      <h1 className="text-5xl font-bold text-indigo-600 text-center">Add your Toy's Collection</h1>
+      <h1 className="sm:text-2xl md:text-4xl font-bold text-indigo-600 text-center">Add your Toy's Collection</h1>
 
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="md:flex gap-14 justify-center">
+        <div className="md:flex gap-14 justify-center mt-4 md:mt-8">
           {errors.exampleRequired && <span>This field is required</span>}
           <div>
             {" "}
             <div>
               {" "}
-              <label htmlFor="toyName">ToyName</label> <br />
+              <label htmlFor="toyName">Toy Name</label> <br />
               <input
-                className="text-input"
-                {...register("toyName")}
+                className="text-input p-2 rounded-sm"
+                {...register("Toy Name")}
                 placeholder="toyName"
-                defaultValue="Web developer"
               />
             </div>
             <div className="my-4">
               {" "}
               <label htmlFor="sellerName">sellerName</label> <br />
               <input
-                className="text-input"
+                className="text-input p-2 rounded-sm"
                 {...register("sellerName", { required: true })}
-                placeholder="sellerName"
-                defaultValue="alu"
+                placeholder="Seller Name"
               />
             </div>
             <div>
               <label htmlFor="Quantity">Quantity</label> <br />
               <input
-                className="text-input"
+                className="text-input p-2 rounded-sm"
                 {...register("availableQuantity", { required: true })}
                 placeholder="availableQuantity"
                 type="number"
@@ -76,7 +72,7 @@ const AddToys = () => {
             <div className="my-4">
               {" "}
               <label htmlFor="Category">Category</label> <br />
-              <select className="text-input" {...register("subCategory")}>
+              <select className="text-input p-2 rounded-sm" {...register("subCategory")}>
                 <option value="Disney Princess">Disney Princess</option>
                 <option value="Frozen Dolls">Frozen Dolls</option>
                 <option value="Animation Characters">
@@ -91,18 +87,17 @@ const AddToys = () => {
               {" "}
               <label htmlFor="Picture">Picture</label> <br />
               <input
-                className="text-input"
+                className="text-input p-2 rounded-sm"
                 {...register("picture")}
                 placeholder="picture"
                 type="url"
-                defaultValue="https://images.pexels.com/photos/2528118/pexels-photo-2528118.jpeg?auto=compress&cs=tinysrgb&w=600"
               />
             </div>
             <div className="my-4">
               {" "}
               <label htmlFor="Price">Price</label> <br />
               <input
-                className="text-input"
+                className="text-input p-2 rounded-sm"
                 {...register("price")}
                 placeholder="price"
                 type="number"
@@ -112,7 +107,7 @@ const AddToys = () => {
               {" "}
               <label htmlFor="Email">Email</label> <br />
               <input
-                className="text-input"
+                className="text-input p-2 rounded-sm"
                 defaultValue={user?.email}
                 {...register("sellerEmail")}
                 placeholder="your email"
@@ -122,7 +117,7 @@ const AddToys = () => {
             <div className="my-4">
               <label htmlFor="Description">Description</label> <br />
               <input
-                className="text-input"
+                className="text-input p-2 rounded-sm"
                 {...register("description")}
                 placeholder="description"
               />
@@ -130,7 +125,7 @@ const AddToys = () => {
           </div>
         </div>
         <input
-          className=" btn submit-btn rounded-md p-3 border-2 border-indigo-500  bg-indigo-500 text-white  font-semibold md:ml-96"
+          className=" btn submit-btn rounded-md p-3 border-2 border-indigo-500  bg-indigo-500 text-white font-semibold md:ml-96"
           value="Add a toy"
           type="submit"
         />
