@@ -9,7 +9,7 @@ import MyToys from "./Components/MyToys";
 import Register from "./Components/Shared/Register";
 import AuthProvider from "./providers/Authprovider";
 import PrivateRoute from "./privateRoute/PrivateRoute";
-// import ErrorPage from "./Components/ErrorPage";
+import ErrorPage from "./Components/ErrorPage";
 import SingleToyDetails from "./Components/SingleToyDetails";
 import AddToys from "./Components/AddToys";
 import Blog from "./Components/Blog";

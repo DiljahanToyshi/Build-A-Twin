@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../providers/Authprovider";
 import { Navigate, useLocation } from "react-router-dom";
+import LoadingSpinner from "../Components/LoadingSpinner";
 
 // eslint-disable-next-line react/prop-types
 const PrivateRoute = ({children}) => {
@@ -9,7 +10,7 @@ const PrivateRoute = ({children}) => {
     // const from = location.state?.from?.pathname || "/";
 
   if (loading) {
-    return <button className="btn loading btn-square">loading</button>;
+    return <LoadingSpinner/>
   }
 
   if (user?.email) {
